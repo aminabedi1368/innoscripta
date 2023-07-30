@@ -1,0 +1,18 @@
+localhost {
+    root * /var/www/public
+    php_fastcgi php-fpm:9000
+    file_server
+    encode gzip
+    @disallowed {
+        path /xmlrpc.php
+        path *.sql
+        path /wp-content/uploads/*.php
+    }
+    header {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Credentials true
+        Access-Control-Allow-Methods *
+        Access-Control-Allow-Headers *
+    }    
+    rewrite @disallowed '/index.php'
+}

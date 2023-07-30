@@ -1,0 +1,27 @@
+APP_NAME="Missha User Management System"
+APP_ENV=local
+APP_KEY=base64:LDggKoQPsCIZsMVY0oUjNG89jk/fYx2dg7nC+8GAIXw=
+APP_DEBUG=true
+APP_URL=https://auth.missha-ir.com/
+
+ROOT_USERNAME=root
+ROOT_PASSWORD=123456
+
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=oauth
+DB_USERNAME=root
+DB_PASSWORD=123456
+
+SENTRY_LARAVEL_DSN=https://bf69086f1ebe4370812344729ef48645@sentry.missha-ir.com/2
+admin_server_token=e437081234
+
+### Missha Scopes (permissions)
+#OAUTH_SCOPES=dashboard,categories,orders,products,pages,upload,payments,campaign,coupon,referral,wallets,profile
+
+### Tooshehbar Scopes (permissions)
+OAUTH_SCOPES=dashboard,categories,orders,products,pages,upload,payments,campaign,coupon,referral,wallets,profile,containers,currencies,flights,lines,ports,services,theme,trips,users,vessels,voyages,world_location,currency_convert
