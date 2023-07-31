@@ -612,8 +612,10 @@ class UserEntity implements UserEntityInterface
         if (isset($tokenInfo['roles']) && is_array($tokenInfo['roles'])) {
             foreach ($tokenInfo['roles'] as $role) {
                 $roleEntity = new RoleEntity();
-                $roleEntity->setId((int)$role['id']);
-                $roleEntity->setName($role['name'] ?? '');
+                $roleEntity->setId((int)$role->getId());
+                $roleEntity->setName($role->getName() ?? '');
+                // $roleEntity->setId((int)$role['id']);
+                // $roleEntity->setName($role['name'] ?? '');
                 $userEntity->addRole($roleEntity);
             }
         }

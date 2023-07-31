@@ -167,7 +167,7 @@ class TokenInfoVO
         }
 
         $newUserArray['scopes'] = array_unique($newUserArray['scopes']);
-        $newUserArray['app_fields'] = $userArray['app_fields'];
+        $newUserArray['app_fields'] = array_key_exists('app_fields', $userArray) ? $userArray['app_fields'] : null;
         $newUserArray['user_identifiers'] = $userArray['user_identifiers'];
         $newUserArray['profile'] = [
             'id' => $userArray['id'],

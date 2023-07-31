@@ -38,20 +38,29 @@ class FetchAndStoreNewsAction
     }
 
 
-    public function __invoke(UserEntity $userEntity, string $category, int $pageSize)
+    public function __invoke(UserEntity $userEntity, string $category, int $pageSize , string $source)
     {
-
-        $resultNewYorkTimesService = $this->NewYorkTimesService->fetchNewsArticles($userEntity->getId(), $category, $pageSize);
-        $resultTheGuardianNewsService = $this->TheGuardianNewsService->fetchNewsArticles($userEntity->getId(), $category, $pageSize);
-        $resultbbcNewsService = $this->bbcNewsService->fetchNewsArticles($userEntity->getId(), $category, $pageSize,);
-        // Merge the results into a single array
-        $mergedResult = array_merge($resultNewYorkTimesService, $resultTheGuardianNewsService, $resultbbcNewsService);
-
-        // Reindex the numeric keys in the merged array
-        $reindexedResult = array_values($mergedResult);
-
+        if ($source === 'bbcNews') {
+            $result = $this->bbcNewsService->fetchNewsArticles($userEntity->getId(), $category, $pageSize);
+        } elseif ($source === 'TheGuardian') {
+            $result = $this->TheGuardianNewsService->fetchNewsArticles($userEntity->getId(), $category, $pageSize);
+        } elseif ($source === 'NewYorkTimes') {
+            $result = $this->NewYorkTimesService->fetchNewsArticles($userEntity->getId(), $category, $pageSize);
+        } elseif ($source === 'All') {
+            $resultNewYorkTimesService = $this->NewYorkTimesService->fetchNewsArticles($userEntity->getId(), $category, $pageSize);
+            $resultTheGuardianNewsService = $this->TheGuardianNewsService->fetchNewsArticles($userEntity->getId(), $category, $pageSize);
+            $resultbbcNewsService = $this->bbcNewsService->fetchNewsArticles($userEntity->getId(), $category, $pageSize,);
+            // Merge the results into a single array
+            $mergedResult = array_merge($resultNewYorkTimesService, $resultTheGuardianNewsService, $resultbbcNewsService);
+            // Reindex the numeric keys in the merged array
+            $result = array_values($mergedResult);
+        }else {
+            // Handle the case when an invalid source is provided
+            return response()->json(['error' => 'Invalid source'], 400);
+        }
+        
         // Convert the reindexed array into a collection (optional)
-        $mergedCollection = collect($reindexedResult);
+        $mergedCollection = collect($result);
 
         // Return the merged collection or the reindexed array (choose one based on your preference)
         return $mergedCollection;

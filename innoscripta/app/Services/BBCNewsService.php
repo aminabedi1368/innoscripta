@@ -34,21 +34,21 @@ class BBCNewsService
 
     public function fetchNewsArticles($userId,$category = 'general', $pageSize = 100)
     {
-        $endpoint = "top-headlines";
+        $endpoint = "everything";
         $queryParams = [
             'apiKey' => $this->apiKey,
-            'category' => $category,
+            'q' => $category,
             'pageSize' => $pageSize,
         ];
 
         try {
+
             $response = $this->client->get($endpoint, ['query' => $queryParams]);
             $data = json_decode($response->getBody(), true);
-
             if (isset($data['articles'])) {
                 $result=[];
                 foreach ($data['articles'] as $articleData) {
-                    $result=$this->saveArticleToDatabase($articleData,$category,$userId);
+                    $result[]=$this->saveArticleToDatabase($articleData,$category,$userId);
                 }
                 return $result;
             }
@@ -66,8 +66,8 @@ class BBCNewsService
             'author' => $articleData['author'] ?? 'No author available',
             'title' => $articleData['title'] ?? 'No title available',
             'description' => $articleData['description'] ?? 'No description available',
-            'url' => $articleData['url'] ?? 'No url available',
-            'urlToImage' => $articleData['urlToImage'] ?? 'No urlToImage available',
+            'url' => $articleData['url'] ?? null,
+            'urlToImage' => $articleData['urlToImage'] ?? null,
             'published_at' => $articleData['publishedAt'] ?? 'No urlToImage available' ,
             'content' => $articleData['content'] ?? 'No content available',
             'category' =>$category,
