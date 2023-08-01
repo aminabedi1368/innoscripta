@@ -58,7 +58,6 @@ class FetchAndStoreNewsAction
             // Handle the case when an invalid source is provided
             return response()->json(['error' => 'Invalid source'], 400);
         }
-
         // Convert the reindexed array into a collection (optional)
         $mergedCollection = collect($result);
 

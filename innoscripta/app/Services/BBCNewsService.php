@@ -42,9 +42,9 @@ class BBCNewsService
         ];
 
         try {
+
             $response = $this->client->get($endpoint, ['query' => $queryParams]);
             $data = json_decode($response->getBody(), true);
-
             if (isset($data['articles'])) {
                 $result=[];
                 foreach ($data['articles'] as $articleData) {
@@ -66,7 +66,7 @@ class BBCNewsService
             'author' => $articleData['author'] ?? 'No author available',
             'title' => $articleData['title'] ?? 'No title available',
             'description' => $articleData['description'] ?? 'No description available',
-            'url' => $articleData['url'] ?? 'No url available',
+            'url' => $articleData['url'] ?? null,
             'urlToImage' => $articleData['urlToImage'] ?? null,
             'published_at' => $articleData['publishedAt'] ?? 'No urlToImage available' ,
             'content' => $articleData['content'] ?? 'No content available',
