@@ -23,9 +23,10 @@ class fetchAndStoreNewsApi
     {
         $category = $request->query('category', 'general'); // Default to 'general' if 'category' is not provided in the query params
         $pageSize = $request->query('pageSize', 100); // Default to 100 if 'pageSize' is not provided in the query params
+        $source = $request->query('source', 'All'); // Default to 100 if 'pageSize' is not provided in the query params
 
         $userEntity = $request->attributes->get('userEntity');
-        $result= $this->FetchAndStoreNewsAction->__invoke($userEntity, $category, $pageSize);
+        $result= $this->FetchAndStoreNewsAction->__invoke($userEntity, $category, $pageSize,$source);
 
         return response()->json($result);
 

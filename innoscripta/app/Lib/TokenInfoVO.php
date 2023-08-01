@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Lib;
 
 use App\Entities\UserEntity;
@@ -167,12 +168,12 @@ class TokenInfoVO
         }
 
         $newUserArray['scopes'] = array_unique($newUserArray['scopes']);
-        $newUserArray['app_fields'] = $userArray['app_fields'];
+        $newUserArray['app_fields'] = array_key_exists('app_fields', $userArray) ? $userArray['app_fields'] : null;
         $newUserArray['user_identifiers'] = $userArray['user_identifiers'];
         $newUserArray['profile'] = [
             'id' => $userArray['id'],
             'first_name' => array_key_exists('first_name', $userArray) ? $userArray['first_name'] : null,
-            'last_name' => array_key_exists('last_name', $userArray) ? $userArray['last_name']: null,
+            'last_name' => array_key_exists('last_name', $userArray) ? $userArray['last_name'] : null,
             'avatar' => $userArray['avatar'],
             'status' => $userArray['status'],
         ];

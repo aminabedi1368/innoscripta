@@ -3,6 +3,7 @@
 pushd /var/www
   ls
   pwd
+  composer install
   php artisan migrate --seed
   php artisan storage:link
   php artisan config:clear

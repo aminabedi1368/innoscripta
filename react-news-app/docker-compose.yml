@@ -1,0 +1,14 @@
+version: '3'
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: innoscripta-front # Name for the React app container
+    ports:
+      - "8009:80" # Expose the React app's port
+    volumes:
+      - .:/usr/src/app # Mount the project directory to the container
+    environment:
+      - NODE_ENV=production # Set environment variables if needed
+    restart: always # Restart the container automatically if it stops

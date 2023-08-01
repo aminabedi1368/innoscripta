@@ -13,6 +13,7 @@ use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7\Response;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
+use App\Actions\Token\GetTokenInfoAction;
 
 /**
  * Class IssueTokenPasswordAction
@@ -41,6 +42,9 @@ class IssueTokenPasswordAction
      */
     private DeviceDetector $deviceDetector;
 
+    private GetTokenInfoAction $getTokenInfoAction;
+
+
     /**
      * ActionIssueTokenByPassword constructor.
      * @param AuthorizationServer $authorizationServer
@@ -52,12 +56,14 @@ class IssueTokenPasswordAction
         AuthorizationServer $authorizationServer,
         HttpFoundationFactory $httpFoundationFactory,
         BadLoginManager $badLoginManager,
-        DeviceDetector $deviceDetector
+        DeviceDetector $deviceDetector,
+        GetTokenInfoAction $getTokenInfoAction
     ) {
         $this->authorizationServer = $authorizationServer;
         $this->httpFoundationFactory = $httpFoundationFactory;
         $this->badLoginManager = $badLoginManager;
         $this->deviceDetector = $deviceDetector;
+        $this->getTokenInfoAction = $getTokenInfoAction;
     }
 
     /**
@@ -76,8 +82,15 @@ class IssueTokenPasswordAction
             $psrResponse = $this->authorizationServer->respondToAccessTokenRequest($psrRequest, new Response());
             $response = $this->httpFoundationFactory->createResponse($psrResponse);
 
-            $response = $response->getContent();
-            return json_decode($response, true);
+            $responseContent = $response->getContent();
+            $responseData = json_decode($responseContent, true); // Convert JSON string to an array
+            $tokenInfo = $this->getTokenInfoAction->__invoke($responseData['access_token']);
+            if ($tokenInfo) {
+                $responseData = array_merge($responseData, $tokenInfo->toArray());
+            }
+
+            return $responseData;
+
         }
         catch (InvalidUserCredentialsException | OAuthServerException $e) {
 
