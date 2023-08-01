@@ -1,0 +1,4593 @@
+{
+	"info": {
+		"_postman_id": "f6e3a3fd-4a90-45d8-ab1c-61286a68f30c",
+		"name": "innoscripta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "165094"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "List Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJQVE41NmlLa2NwdkFmRU1VMkJqYSIsImp0aSI6ImYzZDExZmJlZWIyZGEzYzkyZmFjMmIzM2VmMjdkZGIyNGZmOGQyMDhhZjVjMzdjYmY2MGRkNGU5MDQ5YzBjNzkyOTMzMjhlZjQ3YTNhOTRjIiwiaWF0IjoiMTYwOTIzMzYwMi4wODY5ODQiLCJuYmYiOiIxNjA5MjMzNjAyLjA4Njk4NyIsImV4cCI6IjE2MDk4Mzg0MDIuMDc4NDY0Iiwic3ViIjoiMSIsInNjb3BlcyI6W119.HHsxZqfypAKMowqHg-mz_CPz4kbWxIGbt8HyYGqay5HEM77x3qUBeiUTrxK3GsL9yb5VDG6N9np9K6TaJh19vrC7Y2-87_p8FoZKk432BGEQ8nHPnTnR1RBgeUpvsZ6kIfCIdvs-Hs_vB5zKhQB3Byk3YpywWMRlArnfib13MV5ktr9d4I11t0PErpb2yot3AtnwlLmvfu7ZaWy7rUpTKVKzwU3iUYa--PICI4is-b26wcuVTTltw0jA0kffR10e7qkIWlQhQDUocFDpJ0HUUlKUGiwnAvji4IW1CtOP4p5a9T44Mow9PqTD58UxXSW1QrVrRWB9jmHCq6weOnMjWQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://88.198.55.85:8094/users?search=0912",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "0912",
+									"description": "search in \"first_name\", \"last_name\", \"user_identifiers (mobile, email)\""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJQVE41NmlLa2NwdkFmRU1VMkJqYSIsImp0aSI6ImYzZDExZmJlZWIyZGEzYzkyZmFjMmIzM2VmMjdkZGIyNGZmOGQyMDhhZjVjMzdjYmY2MGRkNGU5MDQ5YzBjNzkyOTMzMjhlZjQ3YTNhOTRjIiwiaWF0IjoiMTYwOTIzMzYwMi4wODY5ODQiLCJuYmYiOiIxNjA5MjMzNjAyLjA4Njk4NyIsImV4cCI6IjE2MDk4Mzg0MDIuMDc4NDY0Iiwic3ViIjoiMSIsInNjb3BlcyI6W119.HHsxZqfypAKMowqHg-mz_CPz4kbWxIGbt8HyYGqay5HEM77x3qUBeiUTrxK3GsL9yb5VDG6N9np9K6TaJh19vrC7Y2-87_p8FoZKk432BGEQ8nHPnTnR1RBgeUpvsZ6kIfCIdvs-Hs_vB5zKhQB3Byk3YpywWMRlArnfib13MV5ktr9d4I11t0PErpb2yot3AtnwlLmvfu7ZaWy7rUpTKVKzwU3iUYa--PICI4is-b26wcuVTTltw0jA0kffR10e7qkIWlQhQDUocFDpJ0HUUlKUGiwnAvji4IW1CtOP4p5a9T44Mow9PqTD58UxXSW1QrVrRWB9jmHCq6weOnMjWQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/users?search=0912",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "0912"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 14:43:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 14:43:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJQVE41NmlLa2NwdkFmRU1VMkJqYSIsImp0aSI6ImYzZDExZmJlZWIyZGEzYzkyZmFjMmIzM2VmMjdkZGIyNGZmOGQyMDhhZjVjMzdjYmY2MGRkNGU5MDQ5YzBjNzkyOTMzMjhlZjQ3YTNhOTRjIiwiaWF0IjoiMTYwOTIzMzYwMi4wODY5ODQiLCJuYmYiOiIxNjA5MjMzNjAyLjA4Njk4NyIsImV4cCI6IjE2MDk4Mzg0MDIuMDc4NDY0Iiwic3ViIjoiMSIsInNjb3BlcyI6W119.HHsxZqfypAKMowqHg-mz_CPz4kbWxIGbt8HyYGqay5HEM77x3qUBeiUTrxK3GsL9yb5VDG6N9np9K6TaJh19vrC7Y2-87_p8FoZKk432BGEQ8nHPnTnR1RBgeUpvsZ6kIfCIdvs-Hs_vB5zKhQB3Byk3YpywWMRlArnfib13MV5ktr9d4I11t0PErpb2yot3AtnwlLmvfu7ZaWy7rUpTKVKzwU3iUYa--PICI4is-b26wcuVTTltw0jA0kffR10e7qkIWlQhQDUocFDpJ0HUUlKUGiwnAvji4IW1CtOP4p5a9T44Mow9PqTD58UxXSW1QrVrRWB9jmHCq6weOnMjWQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/users?search=0912",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "0912"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 14:43:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 14:43:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"first_name\": \"Majid\",\n        \"last_name\": \"Abdolhosseini\",\n        \"id\": 2,\n        \"avatar\": null,\n        \"is_super_admin\": false,\n        \"status\": \"active\",\n        \"year_month\": \"1399-11\",\n        \"year_month_day\": \"1399-11-05\",\n        \"year_week\": \"1399-46\",\n        \"app_fields\": {\n            \"app_id\": 12000,\n            \"sid\": \"snm786\"\n        },\n        \"user_identifiers\": [\n            {\n                \"type\": \"mobile\",\n                \"value\": \"09124971706\",\n                \"user_id\": 2,\n                \"is_verified\": false,\n                \"id\": 2,\n                \"created_at\": \"2021-01-24T13:31:23.000000Z\",\n                \"updated_at\": \"2021-01-24T13:31:23.000000Z\"\n            }\n        ],\n        \"roles\": []\n    },\n    {\n        \"first_name\": \"Majid\",\n        \"last_name\": \"Abdolhosseini\",\n        \"id\": 3,\n        \"avatar\": null,\n        \"is_super_admin\": false,\n        \"status\": \"active\",\n        \"year_month\": \"1399-11\",\n        \"year_month_day\": \"1399-11-05\",\n        \"year_week\": \"1399-46\",\n        \"app_fields\": {\n            \"app_id\": 12000,\n            \"sid\": \"snm786\"\n        },\n        \"user_identifiers\": [\n            {\n                \"type\": \"mobile\",\n                \"value\": \"09124971706\",\n                \"user_id\": 3,\n                \"is_verified\": false,\n                \"id\": 3,\n                \"created_at\": \"2021-01-24T13:32:25.000000Z\",\n                \"updated_at\": \"2021-01-24T13:32:25.000000Z\"\n            }\n        ],\n        \"roles\": []\n    },\n    {\n        \"first_name\": \"Majid\",\n        \"last_name\": \"Abdolhosseini\",\n        \"id\": 4,\n        \"avatar\": null,\n        \"is_super_admin\": false,\n        \"status\": \"active\",\n        \"year_month\": \"1399-11\",\n        \"year_month_day\": \"1399-11-05\",\n        \"year_week\": \"1399-46\",\n        \"app_fields\": {\n            \"app_id\": 12000,\n            \"sid\": \"snm786\"\n        },\n        \"user_identifiers\": [\n            {\n                \"type\": \"mobile\",\n                \"value\": \"09124971706\",\n                \"user_id\": 4,\n                \"is_verified\": false,\n                \"id\": 4,\n                \"created_at\": \"2021-01-24T13:33:22.000000Z\",\n                \"updated_at\": \"2021-01-24T13:33:22.000000Z\"\n            }\n        ],\n        \"roles\": []\n    },\n    {\n        \"first_name\": \"Majid\",\n        \"last_name\": \"Abdolhosseini\",\n        \"id\": 5,\n        \"avatar\": null,\n        \"is_super_admin\": false,\n        \"status\": \"active\",\n        \"year_month\": \"1399-11\",\n        \"year_month_day\": \"1399-11-05\",\n        \"year_week\": \"1399-46\",\n        \"app_fields\": {\n            \"app_id\": 12000,\n            \"sid\": \"snm786\"\n        },\n        \"user_identifiers\": [\n            {\n                \"type\": \"mobile\",\n                \"value\": \"09124971706\",\n                \"user_id\": 5,\n                \"is_verified\": false,\n                \"id\": 5,\n                \"created_at\": \"2021-01-24T13:34:31.000000Z\",\n                \"updated_at\": \"2021-01-24T13:34:31.000000Z\"\n            }\n        ],\n        \"roles\": []\n    },\n    {\n        \"first_name\": \"Majid\",\n        \"last_name\": \"Abdolhosseini\",\n        \"id\": 6,\n        \"avatar\": null,\n        \"is_super_admin\": false,\n        \"status\": \"active\",\n        \"year_month\": \"1399-11\",\n        \"year_month_day\": \"1399-11-05\",\n        \"year_week\": \"1399-46\",\n        \"app_fields\": {\n            \"app_id\": 12000,\n            \"sid\": \"snm786\"\n        },\n        \"user_identifiers\": [\n            {\n                \"type\": \"mobile\",\n                \"value\": \"09124971706\",\n                \"user_id\": 6,\n                \"is_verified\": false,\n                \"id\": 6,\n                \"created_at\": \"2021-01-24T13:34:46.000000Z\",\n                \"updated_at\": \"2021-01-24T13:34:46.000000Z\"\n            }\n        ],\n        \"roles\": []\n    },\n    {\n        \"first_name\": \"Majid\",\n        \"last_name\": \"Abdolhosseini\",\n        \"id\": 7,\n        \"avatar\": null,\n        \"is_super_admin\": false,\n        \"status\": \"active\",\n        \"year_month\": \"1399-11\",\n        \"year_month_day\": \"1399-11-05\",\n        \"year_week\": \"1399-46\",\n        \"app_fields\": {\n            \"app_id\": 12000,\n            \"sid\": \"snm786\"\n        },\n        \"user_identifiers\": [\n            {\n                \"type\": \"mobile\",\n                \"value\": \"09124971706\",\n                \"user_id\": 7,\n                \"is_verified\": false,\n                \"id\": 7,\n                \"created_at\": \"2021-01-24T13:35:07.000000Z\",\n                \"updated_at\": \"2021-01-24T13:35:07.000000Z\"\n            }\n        ],\n        \"roles\": []\n    },\n    {\n        \"first_name\": \"Majid\",\n        \"last_name\": \"Abdolhosseini\",\n        \"id\": 9,\n        \"avatar\": null,\n        \"is_super_admin\": false,\n        \"status\": \"active\",\n        \"year_month\": \"1399-11\",\n        \"year_month_day\": \"1399-11-05\",\n        \"year_week\": \"1399-46\",\n        \"app_fields\": {\n            \"app_id\": 12000,\n            \"sid\": \"snm786\"\n        },\n        \"user_identifiers\": [\n            {\n                \"type\": \"mobile\",\n                \"value\": \"09124971706\",\n                \"user_id\": 9,\n                \"is_verified\": false,\n                \"id\": 8,\n                \"created_at\": \"2021-01-24T13:37:08.000000Z\",\n                \"updated_at\": \"2021-01-24T13:37:08.000000Z\"\n            }\n        ],\n        \"roles\": []\n    },\n    {\n        \"first_name\": \"Majid\",\n        \"last_name\": \"Abdolhosseini\",\n        \"id\": 10,\n        \"avatar\": null,\n        \"is_super_admin\": false,\n        \"status\": \"active\",\n        \"year_month\": \"1399-11\",\n        \"year_month_day\": \"1399-11-05\",\n        \"year_week\": \"1399-46\",\n        \"app_fields\": {\n            \"app_id\": 12000,\n            \"sid\": \"snm786\"\n        },\n        \"user_identifiers\": [\n            {\n                \"type\": \"mobile\",\n                \"value\": \"09124971706\",\n                \"user_id\": 10,\n                \"is_verified\": false,\n                \"id\": 9,\n                \"created_at\": \"2021-01-24T13:37:36.000000Z\",\n                \"updated_at\": \"2021-01-24T13:37:36.000000Z\"\n            }\n        ],\n        \"roles\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Show Single User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/users/1",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 - Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/users/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 14:47:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 14:47:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/users/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:06:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:06:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"first_name\": \"Super\",\n    \"last_name\": \"Admin\",\n    \"id\": 1,\n    \"avatar\": \"/storage/avatar/admin.jpeg\",\n    \"password\": \"$2y$10$VgdVxrM0BalradfDnkEv3um7nDjbQJ3Lmj3.dandwA5zhp.U1kteK\",\n    \"is_super_admin\": true,\n    \"status\": \"active\",\n    \"year_month\": \"1399-10\",\n    \"year_month_day\": \"1399-10-17\",\n    \"year_week\": \"1399-43\",\n    \"app_fields\": {\n        \"username\": \"root\"\n    },\n    \"user_identifiers\": [],\n    \"roles\": []\n}"
+						},
+						{
+							"name": "404 - Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/users/0",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"0"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:06:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:06:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not Found\",\n    \"code\": 404\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"amin\",\n    \"last_name\": \"abedi\",\n    \"password\": \"amedia764\",\n    \"usernames\": {\n        \"email\": \"amin.abedi.1368@gmail.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/users",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "422 - Validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"Majid\",\n    \"last_name\": \"Abdolhosseini\",\n    \"password\": \"m123456M#\",\n    \"usernames\": {\n        \"email\": \"root@gmail.com\"\n    },\n    \"app_fields\": {\n        \"app_id\": 12000,\n        \"sid\": \"snm786\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_url}}/users",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:49:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:49:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"usernames.email\": [\n            \"usernames.email already exists.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"Majid\",\n    \"last_name\": \"Abdolhosseini\",\n    \"password\": \"m123456M#\",\n    \"usernames\": {\n        \"mobile\": \"09124971706\"\n    },\n    \"app_fields\": {\n        \"app_id\": 12000,\n        \"sid\": \"snm786\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_url}}/users",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:41:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:41:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"first_name\": \"Majid\",\n    \"last_name\": \"Abdolhosseini\",\n    \"id\": 15,\n    \"avatar\": null,\n    \"password\": \"$2y$10$bGs9Aks0u9w1fw3/yY6V7OxsOySZeREcKwNZ8lZOTbTppFJlpUz7O\",\n    \"is_super_admin\": false,\n    \"status\": \"active\",\n    \"year_month\": \"1399-12\",\n    \"year_month_day\": \"1399-12-23\",\n    \"year_week\": \"1399-52\",\n    \"app_fields\": {\n        \"app_id\": 12000,\n        \"sid\": \"snm786\"\n    },\n    \"user_identifiers\": [\n        {\n            \"type\": \"mobile\",\n            \"value\": \"09124971706\",\n            \"user_id\": 15,\n            \"is_verified\": false,\n            \"id\": 14,\n            \"created_at\": \"2021-03-13T15:41:10.000000Z\",\n            \"updated_at\": \"2021-03-13T15:41:10.000000Z\"\n        }\n    ],\n    \"roles\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/users/3",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401- UnAuthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/users/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:50:31 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 15:50:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "204 - no content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/users/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:29:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:29:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "400 - Bad request (delete logged in user)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/users/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:19:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:19:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"You can't delete logged in user\",\n    \"code\": 400\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Majid22\",\n    \"last_name\": \"Abdolhosseini122\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/users/3",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"Majid22\",\n    \"last_name\": \"Abdolhosseini122\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/users/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:21:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:21:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"Majid22\",\n    \"last_name\": \"Abdolhosseini122\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/users/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:23:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:23:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"first_name\": \"Majid22\",\n    \"last_name\": \"Abdolhosseini122\",\n    \"id\": 3,\n    \"avatar\": null,\n    \"password\": \"$2y$10$uz/BNvqbpuKVFwqUlIdjD.OxkqzsvHPB34iKIRjy7YayA3QTUN59y\",\n    \"is_super_admin\": false,\n    \"status\": \"active\",\n    \"year_month\": \"1399-11\",\n    \"year_month_day\": \"1399-11-05\",\n    \"year_week\": \"1399-46\",\n    \"app_fields\": {\n        \"app_id\": 12000,\n        \"sid\": \"snm786\"\n    },\n    \"user_identifiers\": [],\n    \"roles\": []\n}"
+						},
+						{
+							"name": "404 - Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"Majid22\",\n    \"last_name\": \"Abdolhosseini122\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/users/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:22:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:22:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not Found\",\n    \"code\": 404\n}"
+						}
+					]
+				},
+				{
+					"name": "Change My Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJNSDczT2tHNkszbkVvQnJFYnNubCIsImp0aSI6IjY2MDExMTczOTgyY2NkODVlZmEyNWI1N2ViNTc2ZjMxOTNiYTNmNGQ4Mzc5MGEwYjFhZWQyZmMzMTBmMWYyNjk2MGY5MmZhZTVjYTJmMTk3IiwiaWF0IjoxNjgyODQyNzM2LjA3NjQzNywibmJmIjoxNjgyODQyNzM2LjA3NjQzOCwiZXhwIjoxNjgzNDQ3NTM2LjA3Mjc4MSwic3ViIjoiNjAiLCJzY29wZXMiOltdfQ.LbxFBRQ5zcEDt0icmaVQ0UxpkfkbPA5VVldnfzYwcpgu4aCzoHZ4OdVxlrLWxzo0OP7AQXEdmx8RijfWxIqWcvytpGFefUMliET1UEMcHowpi2-z3RWp6df7A930Xm5MNazPVT0rdax-eJVnLH6Qi_ZAdRWbONX49GahUHF0RhJQowsA4bvmCzs1TQbghTVhVxP7L-UvKl1eBonmA-0tgRqWGgB_BnFlrM0vZRdgt8VEEK9K9BA6EEuIl_MbUcMPB17TTpXYaFoaETryRThiiBoPM0ZNREuQOIdHMhh6p3YFqbGD5NdXCrUrsKPtJ5k9D97IV3Df1VfwmfnygG_mgA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\": \"12345678\",\n    \"new_password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/users/change-password",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"users",
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"old_password\": \"123456\",\n    \"new_password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/users/change-password",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:24:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:24:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\"\n}"
+						},
+						{
+							"name": "401 - Invalide credentials",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"old_password\": \"123456\",\n    \"new_password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/users/change-password",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"change-password"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:24:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:24:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Forget Password (change password)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"93103\",\n    \"new_password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/users/forget-password",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"users",
+								"forget-password"
+							]
+						},
+						"description": "You should get code using this API endpoint :\n{{server_url}}/user_identifiers/send_verification_code"
+					},
+					"response": [
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"93103\",\n    \"new_password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/users/forget-password",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"forget-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 17:05:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 17:05:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\"\n}"
+						},
+						{
+							"name": "404 -  Code Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"134312\",\n    \"new_password\": \"12345xX!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/users/forget-password",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"forget-password"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:59:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Mar 2021 16:59:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"otp code expired or not exists\",\n    \"message_code\": \"invalid_otp_code\",\n    \"code\": 404\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User_Identifier",
+			"item": [
+				{
+					"name": "Add Identifier (By Logged in user for himself)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"email\",\n    \"value\": \"majid8911303@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/user_identifiers",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"user_identifiers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 - Invalid Credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"email\",\n    \"value\": \"majid8911303@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_url}}/user_identifiers",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 07:17:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 07:17:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "200 - success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"mobile\",\n    \"value\": \"09395410440\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/user_identifiers",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_identifiers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 24 Nov 2020 07:16:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 24 Nov 2020 07:16:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "50"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"mobile\",\n    \"value\": \"09395410440\",\n    \"user_id\": 102,\n    \"is_verified\": false,\n    \"id\": 1006,\n    \"created_at\": \"2020-11-24T06:47:50.000000Z\",\n    \"updated_at\": \"2020-11-24T06:47:50.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Identifier (For another user by admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"type\": \"email\",\n    \"value\": \"majid89113034@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/user_identifiers/by_admin",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"user_identifiers",
+								"by_admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "422 - validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"type\": \"email\",\n    \"value\": \"majid8911303@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/user_identifiers/by_admin",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_identifiers",
+										"by_admin"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 09:37:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 09:37:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"value\": [\n            \"value already exists.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"type\": \"email\",\n    \"value\": \"majid89113034@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/user_identifiers/by_admin",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_identifiers",
+										"by_admin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 09:38:16 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 09:38:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"email\",\n    \"value\": \"majid89113034@gmail.com\",\n    \"user_id\": 1,\n    \"is_verified\": true,\n    \"id\": 16,\n    \"created_at\": \"2021-03-14T09:38:16.000000Z\",\n    \"updated_at\": \"2021-03-14T09:38:16.000000Z\"\n}"
+						},
+						{
+							"name": "401 - Invalid Credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"type\": \"email\",\n    \"value\": \"majid8911303@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/user_identifiers/by_admin",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_identifiers",
+										"by_admin"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 08:58:41 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 08:58:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Identifier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/user_identifiers/10000",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"user_identifiers",
+								"10000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 - Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/user_identifiers/12",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers",
+										"12"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 09:49:54 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 09:49:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "204 - no content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/user_identifiers/12",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers",
+										"12"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:01:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:01:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Verify Identifier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"email\",\n    \"value\": \"amin.abedi.1368@gmail.com\",\n    \"code\": \"44862\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/user_identifiers/verify",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"user_identifiers",
+								"verify"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "422 - validation error (invalid verification code)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"mobile\",\n    \"value\": \"09124971706\",\n    \"code\": \"66503\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/user_identifiers/verify",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_identifiers",
+										"verify"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:11:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:11:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Verification Code\",\n    \"code\": 422\n}"
+						},
+						{
+							"name": "422 - Validation Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"mobile\",\n    \"value\": \"09124971706\",\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/user_identifiers/verify",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_identifiers",
+										"verify"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:11:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:11:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"type\": [\n            \"The type field is required.\"\n        ],\n        \"value\": [\n            \"The value field is required.\"\n        ],\n        \"code\": [\n            \"The code field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"mobile\",\n    \"value\": \"09124971706\",\n    \"code\": \"30889\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/user_identifiers/verify",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_identifiers",
+										"verify"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:31:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:31:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 604800,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ3ZzRYMFhzNGF2VnRacmNxWjhocyIsImp0aSI6IjM5ODI2YzhhNTVmMDZmZDVkM2I2OWM5NGM1NWRmMjNjZTY3MmU2ZDIxMTdjYTI2ZTg3NmQ4OWRhNGMzNjFmZjhiYThkY2QxMTJiMDE4ZjM3IiwiaWF0IjoiMTYxNTcxNzg5OS44MzEzODYiLCJuYmYiOiIxNjE1NzE3ODk5LjgzMTM5MCIsImV4cCI6IjE2MTYzMjI2OTkuODE4NTM3Iiwic3ViIjoiMiIsInNjb3BlcyI6W119.Tc06M3bWsTFHIID5X7PrmiRrAXchXZDBSiAeOqJlUX17GjCLRmgu2l3l8ikn4NvFJzNuD7qxq8Lw2qnq9A5Brm6Vnppsq_CBP25tBY-quSzuiTAy-RDbbInsikLeODoLCHi4eHM_CeheVdFRVpVtFWw2XAvSb5jXmVMdxZphXrLiG6Kv00D0CoSjEvGAeHSXbdIFF0Qbhla8vGx2peoMdGwGROBeQhYxEzK9vw6pkg5Anpmnx9YjLCMfc-tlzK7-FsO0apspV6rIEzL6vggw6VcQ31RZ5CIkg07eERh6JTBw2Dp04NOoLohf6cVYa90yoFx_6Mj6zqarEKlqmUuG_g\",\n    \"refresh_token\": \"def50200e5399f8c4f3bc30f9dcd37f2e92ca5145bbaa8551389cb668365af80a1d1958475f33e393b5b1abce2af214a332d2603e1d9a7fa963347986e82c9f74d6bddbb0994ddc383e0185f1c9dcbd445dc02337181bc10a00e8d1af5f9e1cafb61f6f00024d40c8d28e83ff581296516658ec8ad787c7bc87ca297db826190e8027679d28f15e512aad50525ff03983f8cbe47e4595bf02c6deac0c701738db053cfeca88f8ed6db8c649d1c79849b3c5f7f7adf8d472b7afb8c397be928ecd7171a5398b04b2f813d8e259234cf84e015cef31550fa692d75470c21b186bfd8add5d0b885f5859bbe68464f6ead76ea46941024c7236271573765523b11e3569fab3d771a22ac4cb9dbb134c2b6fd05502ed6cff83743c50375a0eecec339bd781d36ab16ab6923271b801f7816e525caddc5328c200afa2bcf96b4ae12367c8460e010d95cdf67ec49cab47f431daed026c434b628a4b17b365cbd6189fc52a155fbe51b14438c1f447eabd7589572bb9bf9\"\n}"
+						},
+						{
+							"name": "422 - Already Verified",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"mobile\",\n    \"value\": \"09124971706\",\n    \"code\": \"87124\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/user_identifiers/verify",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_identifiers",
+										"verify"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:16:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:16:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Already Verified\",\n    \"code\": 422\n}"
+						}
+					]
+				},
+				{
+					"name": "List All User Identifiers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/user_identifiers",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"user_identifiers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/user_identifiers",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:51:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:51:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"type\": \"email\",\n        \"value\": \"root@gmail.com\",\n        \"user_id\": 1,\n        \"is_verified\": true,\n        \"id\": 1,\n        \"created_at\": \"2021-01-06T11:08:22.000000Z\",\n        \"updated_at\": \"2021-01-06T11:08:22.000000Z\"\n    },\n    {\n        \"type\": \"mobile\",\n        \"value\": \"09124971706\",\n        \"user_id\": 2,\n        \"is_verified\": true,\n        \"id\": 2,\n        \"created_at\": \"2021-01-24T13:31:23.000000Z\",\n        \"updated_at\": \"2021-03-14T10:31:39.000000Z\"\n    },\n    {\n        \"type\": \"mobile\",\n        \"value\": \"09124971706\",\n        \"user_id\": 4,\n        \"is_verified\": false,\n        \"id\": 4,\n        \"created_at\": \"2021-01-24T13:33:22.000000Z\",\n        \"updated_at\": \"2021-01-24T13:33:22.000000Z\"\n    },\n    {\n        \"type\": \"mobile\",\n        \"value\": \"09124971706\",\n        \"user_id\": 5,\n        \"is_verified\": false,\n        \"id\": 5,\n        \"created_at\": \"2021-01-24T13:34:31.000000Z\",\n        \"updated_at\": \"2021-01-24T13:34:31.000000Z\"\n    },\n    {\n        \"type\": \"mobile\",\n        \"value\": \"09124971706\",\n        \"user_id\": 6,\n        \"is_verified\": false,\n        \"id\": 6,\n        \"created_at\": \"2021-01-24T13:34:46.000000Z\",\n        \"updated_at\": \"2021-01-24T13:34:46.000000Z\"\n    },\n    {\n        \"type\": \"mobile\",\n        \"value\": \"09124971706\",\n        \"user_id\": 7,\n        \"is_verified\": false,\n        \"id\": 7,\n        \"created_at\": \"2021-01-24T13:35:07.000000Z\",\n        \"updated_at\": \"2021-01-24T13:35:07.000000Z\"\n    },\n    {\n        \"type\": \"mobile\",\n        \"value\": \"09124971706\",\n        \"user_id\": 9,\n        \"is_verified\": false,\n        \"id\": 8,\n        \"created_at\": \"2021-01-24T13:37:08.000000Z\",\n        \"updated_at\": \"2021-01-24T13:37:08.000000Z\"\n    },\n    {\n        \"type\": \"mobile\",\n        \"value\": \"09124971706\",\n        \"user_id\": 10,\n        \"is_verified\": false,\n        \"id\": 9,\n        \"created_at\": \"2021-01-24T13:37:36.000000Z\",\n        \"updated_at\": \"2021-01-24T13:37:36.000000Z\"\n    },\n    {\n        \"type\": \"mobile\",\n        \"value\": \"09395410440\",\n        \"user_id\": 11,\n        \"is_verified\": false,\n        \"id\": 10,\n        \"created_at\": \"2021-02-06T07:44:38.000000Z\",\n        \"updated_at\": \"2021-02-06T07:44:38.000000Z\"\n    },\n    {\n        \"type\": \"mobile\",\n        \"value\": \"09395410440\",\n        \"user_id\": 12,\n        \"is_verified\": false,\n        \"id\": 11,\n        \"created_at\": \"2021-02-06T07:51:38.000000Z\",\n        \"updated_at\": \"2021-02-06T07:51:38.000000Z\"\n    }\n]"
+						},
+						{
+							"name": "401 - Invalid Credentials",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/user_identifiers",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:33:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:33:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Show Single Identifier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/user_identifiers/13",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"user_identifiers",
+								"13"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/user_identifiers/13",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers",
+										"13"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 11:11:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 11:11:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"mobile\",\n    \"value\": \"09124971706\",\n    \"user_id\": 14,\n    \"is_verified\": false,\n    \"id\": 13,\n    \"created_at\": \"2021-03-13T15:22:08.000000Z\",\n    \"updated_at\": \"2021-03-13T15:22:08.000000Z\"\n}"
+						},
+						{
+							"name": "404 - Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/user_identifiers/12",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers",
+										"12"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 11:11:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 11:11:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not Found\",\n    \"code\": 404\n}"
+						},
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/user_identifiers/12",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers",
+										"12"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 11:10:35 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 11:10:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Send Verification code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"09124971706\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/user_identifiers/send_verification_code",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"user_identifiers",
+								"send_verification_code"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204 - no content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"09124971706\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_url}}/user_identifiers/send_verification_code",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers",
+										"send_verification_code"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:15:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:15:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "List My User Identifiers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/user_identifiers/mine",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"user_identifiers",
+								"mine"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/user_identifiers/mine",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers",
+										"mine"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:55:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 10:55:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/user_identifiers/mine",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"user_identifiers",
+										"mine"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 11:01:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 11:01:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"type\": \"email\",\n        \"value\": \"root@gmail.com\",\n        \"user_id\": 1,\n        \"is_verified\": true,\n        \"id\": 1,\n        \"created_at\": \"2021-01-06T11:08:22.000000Z\",\n        \"updated_at\": \"2021-01-06T11:08:22.000000Z\"\n    },\n    {\n        \"type\": \"email\",\n        \"value\": \"majid8911303@gmail.com\",\n        \"user_id\": 1,\n        \"is_verified\": true,\n        \"id\": 15,\n        \"created_at\": \"2021-03-14T07:33:26.000000Z\",\n        \"updated_at\": \"2021-03-14T09:37:38.000000Z\"\n    },\n    {\n        \"type\": \"email\",\n        \"value\": \"majid89113034@gmail.com\",\n        \"user_id\": 1,\n        \"is_verified\": true,\n        \"id\": 16,\n        \"created_at\": \"2021-03-14T09:38:16.000000Z\",\n        \"updated_at\": \"2021-03-14T09:38:16.000000Z\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User_Avatar",
+			"item": [
+				{
+					"name": "Upload Avatar Image By Admin For Others",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/majid/Desktop/index.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/users/1/avatar",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"users",
+								"1",
+								"avatar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/majid/Desktop/index.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_url}}/users/1/avatar",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"avatar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:09:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:09:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"first_name\": \"Super\",\n    \"last_name\": \"Admin\",\n    \"id\": 1,\n    \"avatar\": \"/storage/avatar/XpLS2kti1BnLbAldXHOnRCaSEHhtcTFkykfiWiuU.png\",\n    \"password\": \"$2y$10$bjLSUzB3WzN1ExkL9UpIHOhDIh7kh3.SuvZv9ecp17ThFeBBg5.Fy\",\n    \"is_super_admin\": true,\n    \"status\": \"active\",\n    \"year_month\": \"1399-10\",\n    \"year_month_day\": \"1399-10-17\",\n    \"year_week\": \"1399-43\",\n    \"app_fields\": {\n        \"username\": \"root\"\n    },\n    \"user_identifiers\": [],\n    \"roles\": []\n}"
+						},
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/majid/Pictures/Screenshot from 2020-11-22 11-55-03.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_url}}/users/1/avatar",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"avatar"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:08:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:08:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload Avatar Image By User for himself",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJPU1hSR3EzVTB5Tk55TDdvbXo5YiIsImp0aSI6IjNhNTNhODBlMDRiOGVmODg2NjJkZjQwYmI4YjFkNjU4MTI3OWUwODk2YzFjYWQyNWFhYjY4ZmJiYmU1NmE2YzM3Yzc0YzM5OWYwNjE3ZGY5IiwiaWF0IjoxNjkwNzY5MDIwLjgxODU0NiwibmJmIjoxNjkwNzY5MDIwLjgxODU0OCwiZXhwIjoxNjkxMzczODIwLjgwNjEzLCJzdWIiOiIxMCIsInNjb3BlcyI6W119.O-n3hiWrHW5d6vq8_betuKZUq3X92MNgJJB0lCXYEbSnuTMnyeUTFgcyU8_KuiBqSwOOFnFE1HJF5BlOP6U0ivoxtnGzk0nhpVX8l8SZkC0Ol9X64VuxSFTvdWHSedqnNT5kdA3px_2f75W4DfPvNtL2kR_VpoTyzfS2nBh5KoJCCsICTH8HqE3h2uxdemdNEFSur2iJ0-zZx5Q-NAOqy9YU3wMeCbnr04_GxVDPZFNS-pycn13lfm9mDmIGezl8ar8WqFBh4l34GlBiv_mm6RMOqH3J4hmcByLx8dFUDRRv96a7R4iVVcJ2QZFEdESiDXYCthyaKiP8IjNbg7U5ow",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/Users/aminabedi/Downloads/09365309603.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/users/avatar",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"users",
+								"avatar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/majid/Desktop/index.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_url}}/users/1/avatar",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"avatar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:09:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:09:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"first_name\": \"Super\",\n    \"last_name\": \"Admin\",\n    \"id\": 1,\n    \"avatar\": \"/storage/avatar/XpLS2kti1BnLbAldXHOnRCaSEHhtcTFkykfiWiuU.png\",\n    \"password\": \"$2y$10$bjLSUzB3WzN1ExkL9UpIHOhDIh7kh3.SuvZv9ecp17ThFeBBg5.Fy\",\n    \"is_super_admin\": true,\n    \"status\": \"active\",\n    \"year_month\": \"1399-10\",\n    \"year_month_day\": \"1399-10-17\",\n    \"year_week\": \"1399-43\",\n    \"app_fields\": {\n        \"username\": \"root\"\n    },\n    \"user_identifiers\": [],\n    \"roles\": []\n}"
+						},
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/majid/Pictures/Screenshot from 2020-11-22 11-55-03.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_url}}/users/1/avatar",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"avatar"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:08:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:08:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/users/1/avatar",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"users",
+								"1",
+								"avatar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/users/1/avatar",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"avatar"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:37:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:37:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "204 - no content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/users/1/avatar",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"avatar"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:38:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Mar 2021 12:38:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "Revoke MY Token (Login)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJPU1hSR3EzVTB5Tk55TDdvbXo5YiIsImp0aSI6IjNhNTNhODBlMDRiOGVmODg2NjJkZjQwYmI4YjFkNjU4MTI3OWUwODk2YzFjYWQyNWFhYjY4ZmJiYmU1NmE2YzM3Yzc0YzM5OWYwNjE3ZGY5IiwiaWF0IjoxNjkwNzY5MDIwLjgxODU0NiwibmJmIjoxNjkwNzY5MDIwLjgxODU0OCwiZXhwIjoxNjkxMzczODIwLjgwNjEzLCJzdWIiOiIxMCIsInNjb3BlcyI6W119.O-n3hiWrHW5d6vq8_betuKZUq3X92MNgJJB0lCXYEbSnuTMnyeUTFgcyU8_KuiBqSwOOFnFE1HJF5BlOP6U0ivoxtnGzk0nhpVX8l8SZkC0Ol9X64VuxSFTvdWHSedqnNT5kdA3px_2f75W4DfPvNtL2kR_VpoTyzfS2nBh5KoJCCsICTH8HqE3h2uxdemdNEFSur2iJ0-zZx5Q-NAOqy9YU3wMeCbnr04_GxVDPZFNS-pycn13lfm9mDmIGezl8ar8WqFBh4l34GlBiv_mm6RMOqH3J4hmcByLx8dFUDRRv96a7R4iVVcJ2QZFEdESiDXYCthyaKiP8IjNbg7U5ow",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer tk3KneReAfgw4iKtZxT5RKV4HkrvxtMF0KzGxnOXHV2TwlPNcOjKLlZUtl23UIx8FtLK4eRIqSAdgIMNraSV9BcTAX7L_23yjEwvklU2TOLVUFPXs7CG5JkVyA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/token/revoke_token",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"token",
+								"revoke_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Issue Token Password Grant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"username\": \"aminabedi.1368@gmail.com\",\n    \"password\": \"amedia764\",\n    \"grant_type\": \"password\",\n    \"client_id\": \"OSXRGq3U0yNNyL7omz9b\",\n    \"client_secret\": \"ylszidb2yQ9TiDDTuLld\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/token",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"09124971706\",\n    \"password\": \"1234567\",\n    \"grant_type\": \"password\",\n    \"client_id\": \"pdtd5lGQs6kEHSdDQb3B\",\n    \"client_secret\": \"snmnefYTOOuMlzMgiJtO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_url}}/token",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"token"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:35:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:35:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "200 - success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"09124971706\",\n    \"password\": \"123456\",\n    \"grant_type\": \"password\",\n    \"client_id\": \"pdtd5lGQs6kEHSdDQb3B\",\n    \"client_secret\": \"snmnefYTOOuMlzMgiJtO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_url}}/token",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:34:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:34:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 604800,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJwZHRkNWxHUXM2a0VIU2REUWIzQiIsImp0aSI6IjM2MWNiNmVjYThhY2QwOWM1MWY4Y2IwY2ZmOWRhOTA0NDJhOGJhM2M1MGE0M2Y3ZWEzNDE5NTNiMGEyYmQ0OTc3YzlmNzA4NTQ4ZjVmNDE4IiwiaWF0IjoxNjA2MDM0MDgwLCJuYmYiOjE2MDYwMzQwODAsImV4cCI6MTYwNjYzODg4MCwic3ViIjoiIiwic2NvcGVzIjpbXX0.XHybkmD2LppjHahKT7Z7G_6mG1QWaU8W5c_W_tvyvWAS30_aWUHYGVQEXhHxnuJSUQ-zESOOuWULw_s3wViEqCRgS2m2ybb8UQUhUxN64kFGqnZYz85HBdHT11FsjymaDR6_kJujvdKcgzztCLCjylsDU1xFTei3M7ifpauqWQ6lofGWz1AcCWBn5dS3kCi-wYWFI2BDal9a_PoKlgo4_oar7N10ZDqdDmdHuzqv932E5Rm1hhjbphwQXfZr0gTZnelboA2c04UvfMAwCHd458NRMTr7IW5GaARbThMaM-g-KDAVTtDNronzLXrwV3NsR1Upceahg3j4BGSWiz2EiA\",\n    \"refresh_token\": \"def50200862619458cf1974e429a3b4782cc1b19d8b4ea0f291332b1b67431b8574a00fbb83b1346ad2f7d3a56059bdfbb1817ef7eca72439f64dc3382d753ba23b6d4f034f8d2ae78c32499c3b9923934eeae4f598d80ed9f876e80dc201ececc7a2e0fcee6757e328d39e497aaba6f10a2eb16e72d3dc42ec10ee6021fedf2e18b874ed25f169b35a07c9cc7ac43f77038afd012e8d6414c13c3893117330cb7240f7765cbbf4bfbe7abc80ae072228a36bf7eb486ee07aea3cfbb8ac6cba0b450465b53865830defb9c060da6b84fb5babf13f22cdd83765b49ce2a2bac915e3048e8b896d0bf7d93c80af49351aca03952122efc3ba3e554d19c87be7334b7aa24183bd5cf653e88bc803af30807342cbb203aaf9079b82042f8675c6cb0cc8406df811e1c300cfc26a4141ca4eba0348e1b0126d876f70bcc5f222a7142583c2b2862788bdc17fa44df109496d1e0295a68ea564797da603eb678946b3561eb147e30d01b29b96896620fbb060835f1c15fa0ca30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Token Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/token/token_info/eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJPU1hSR3EzVTB5Tk55TDdvbXo5YiIsImp0aSI6IjNhNTNhODBlMDRiOGVmODg2NjJkZjQwYmI4YjFkNjU4MTI3OWUwODk2YzFjYWQyNWFhYjY4ZmJiYmU1NmE2YzM3Yzc0YzM5OWYwNjE3ZGY5IiwiaWF0IjoxNjkwNzY5MDIwLjgxODU0NiwibmJmIjoxNjkwNzY5MDIwLjgxODU0OCwiZXhwIjoxNjkxMzczODIwLjgwNjEzLCJzdWIiOiIxMCIsInNjb3BlcyI6W119.O-n3hiWrHW5d6vq8_betuKZUq3X92MNgJJB0lCXYEbSnuTMnyeUTFgcyU8_KuiBqSwOOFnFE1HJF5BlOP6U0ivoxtnGzk0nhpVX8l8SZkC0Ol9X64VuxSFTvdWHSedqnNT5kdA3px_2f75W4DfPvNtL2kR_VpoTyzfS2nBh5KoJCCsICTH8HqE3h2uxdemdNEFSur2iJ0-zZx5Q-NAOqy9YU3wMeCbnr04_GxVDPZFNS-pycn13lfm9mDmIGezl8ar8WqFBh4l34GlBiv_mm6RMOqH3J4hmcByLx8dFUDRRv96a7R4iVVcJ2QZFEdESiDXYCthyaKiP8IjNbg7U5ow",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"token",
+								"token_info",
+								"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJPU1hSR3EzVTB5Tk55TDdvbXo5YiIsImp0aSI6IjNhNTNhODBlMDRiOGVmODg2NjJkZjQwYmI4YjFkNjU4MTI3OWUwODk2YzFjYWQyNWFhYjY4ZmJiYmU1NmE2YzM3Yzc0YzM5OWYwNjE3ZGY5IiwiaWF0IjoxNjkwNzY5MDIwLjgxODU0NiwibmJmIjoxNjkwNzY5MDIwLjgxODU0OCwiZXhwIjoxNjkxMzczODIwLjgwNjEzLCJzdWIiOiIxMCIsInNjb3BlcyI6W119.O-n3hiWrHW5d6vq8_betuKZUq3X92MNgJJB0lCXYEbSnuTMnyeUTFgcyU8_KuiBqSwOOFnFE1HJF5BlOP6U0ivoxtnGzk0nhpVX8l8SZkC0Ol9X64VuxSFTvdWHSedqnNT5kdA3px_2f75W4DfPvNtL2kR_VpoTyzfS2nBh5KoJCCsICTH8HqE3h2uxdemdNEFSur2iJ0-zZx5Q-NAOqy9YU3wMeCbnr04_GxVDPZFNS-pycn13lfm9mDmIGezl8ar8WqFBh4l34GlBiv_mm6RMOqH3J4hmcByLx8dFUDRRv96a7R4iVVcJ2QZFEdESiDXYCthyaKiP8IjNbg7U5ow"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_url}}/token/token_info/{{access_token}}",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"token",
+										"token_info",
+										"{{access_token}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:33:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:33:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user_entity\": {\n        \"first_name\": \"Majid\",\n        \"last_name\": \"Abdolhosseini\",\n        \"id\": 105,\n        \"username\": \"mhndev4\",\n        \"user_identifier\": [\n            {\n                \"type\": \"mobile\",\n                \"value\": \"09124971706\",\n                \"user_id\": 105,\n                \"id\": 1007,\n                \"created_at\": \"2020-11-18T09:23:59.000000Z\",\n                \"updated_at\": \"2020-11-18T09:23:59.000000Z\"\n            }\n        ],\n        \"roles\": [\n            {\n                \"name\": \"Destany Mante DDS\",\n                \"slug\": \"destany-mante-dds\",\n                \"description\": \"Quia eveniet consequatur non quae nisi est. Dolor beatae rerum sunt assumenda. Sequi sit nulla est dolorem.\",\n                \"id\": 1,\n                \"scopes\": [\n                    {\n                        \"name\": \"Larissa McLaughlin\",\n                        \"slug\": \"larissa-mclaughlin\",\n                        \"description\": \"Officiis error dolorem repudiandae. Quisquam voluptas iusto eaque fugit dolores deleniti minima. Ducimus voluptas cum est non beatae quo qui.\",\n                        \"id\": 30\n                    },\n                    {\n                        \"name\": \"Antonio Mante\",\n                        \"slug\": \"antonio-mante\",\n                        \"description\": \"Ut sed distinctio ea et. Dolor harum iste cupiditate molestias totam recusandae sint non. Sequi eligendi nulla est praesentium. Veritatis natus odio excepturi eveniet animi.\",\n                        \"id\": 128\n                    },\n                    {\n                        \"name\": \"Logan Jacobson\",\n                        \"slug\": \"logan-jacobson\",\n                        \"description\": \"Dicta ut similique ratione natus aut voluptatum velit. Voluptatem amet aut natus eligendi. Illum iusto fugiat soluta esse quisquam mollitia quod cupiditate.\",\n                        \"id\": 179\n                    }\n                ]\n            },\n            {\n                \"name\": \"Emilie Hirthe Jr.\",\n                \"slug\": \"emilie-hirthe-jr\",\n                \"description\": \"Et aspernatur ut quidem nihil. Aut eaque maxime assumenda iure omnis. Eveniet reprehenderit facere voluptatem dolorem sit sit non. Iste inventore dolores sint.\",\n                \"id\": 2,\n                \"scopes\": [\n                    {\n                        \"name\": \"Elena Simonis\",\n                        \"slug\": \"elena-simonis\",\n                        \"description\": \"Tenetur repellendus veritatis deserunt voluptates. Saepe ut omnis sed et beatae. Qui officiis et illo.\",\n                        \"id\": 2\n                    },\n                    {\n                        \"name\": \"Earnestine Macejkovic\",\n                        \"slug\": \"earnestine-macejkovic\",\n                        \"description\": \"Dolor iusto ea voluptates rem. Voluptatem at cupiditate quae sapiente dolorem et voluptatem officia. Reprehenderit laudantium sapiente numquam aut sunt.\",\n                        \"id\": 26\n                    },\n                    {\n                        \"name\": \"Augustus Sauer\",\n                        \"slug\": \"augustus-sauer\",\n                        \"description\": \"Aliquid aut cum magnam ut quod magni. Dolore totam saepe ut corrupti numquam reiciendis non. In officiis inventore inventore et.\",\n                        \"id\": 42\n                    },\n                    {\n                        \"name\": \"Bernice Gorczany\",\n                        \"slug\": \"bernice-gorczany\",\n                        \"description\": \"Nostrum perferendis perspiciatis inventore est maiores omnis non aliquam. Qui quia amet ut officia magnam dicta.\",\n                        \"id\": 46\n                    },\n                    {\n                        \"name\": \"Gerardo Ledner\",\n                        \"slug\": \"gerardo-ledner\",\n                        \"description\": \"Non molestiae repellat dicta eum culpa. Non ea nostrum vel optio aut. At illo ipsum accusamus. Expedita facere deleniti aut iusto voluptas nam et. Rerum tempore doloribus quod cupiditate.\",\n                        \"id\": 135\n                    },\n                    {\n                        \"name\": \"John Walker\",\n                        \"slug\": \"john-walker\",\n                        \"description\": \"Reprehenderit ut est ducimus adipisci velit sed. Blanditiis excepturi consequuntur voluptatibus optio fugit dolore quam aut. Nihil quia aut hic autem placeat quis voluptas.\",\n                        \"id\": 140\n                    },\n                    {\n                        \"name\": \"Rico Gulgowski II\",\n                        \"slug\": \"rico-gulgowski-ii\",\n                        \"description\": \"Quia cumque quis ut est aut voluptas impedit. Nisi consequuntur necessitatibus necessitatibus ut rerum. Doloribus ut quis sunt. Doloremque sint voluptatem maxime atque.\",\n                        \"id\": 180\n                    },\n                    {\n                        \"name\": \"Prof. Leon Kunze\",\n                        \"slug\": \"prof-leon-kunze\",\n                        \"description\": \"Officiis consectetur reiciendis cum incidunt quas. Qui fugit excepturi enim est quo qui.\",\n                        \"id\": 182\n                    }\n                ]\n            }\n        ]\n    },\n    \"oauth_access_token_id\": \"b7ec0bf6723882f291723960213925909d2fd739407fa13f77d9177ad5f5cd557f15bb7c2d2a2729\",\n    \"oauth_client_id\": \"pdtd5lGQs6kEHSdDQb3B\"\n}"
+						},
+						{
+							"name": "404 - not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/token/token_info/{token}",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"token",
+										"token_info",
+										"{token}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:30:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:30:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 404,\n    \"message\": \"access token not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Revoke User Token (Admin calls this API)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/token/revoke_token/{{access_token}}",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"token",
+								"revoke_token",
+								"{{access_token}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/token/revoke_token/{{access_token}}",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"token",
+										"revoke_token",
+										"{{access_token}}"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:53:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Nov 2020 08:53:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Token\",\n    \"code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Issue Token Refresh Token Grant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"def502003d480b2398ce5f64533cc0703b88fff9fe08eca06ead064d45d6b07abf213cc4a0b90332e0dda15c647e635ce194a45d930c67e4a1d8c0591130eae7029dad374a3b912ce901634ea3134474ad7dbe75c693a9445ea1cc2988120acdbb200bc86240a5cf6c14476e7862ce7f8b7049e51fd186397a9df814f0c6d7909c0392b40b82a5c8a9160ebbf6369d6036acf251c2a2b63319cb63cc515f6eab3f8cadb045ea44b8dcd936e0450992ab515350ac76dc252230afc74df565f3c4223879e800c5f13b6d4e899d821d3f145b61dc1565c0a1eb7e96209e281d920df63ef972b598edf86033942191cf6487313d70ceffe9f91758c22dd35a0a83f776658578ed71c4b5d15b7e2bb3fc9111fb15a195d3de3f37848e5b4eaad0fe8d5b10b8f29edadf25c4cc6a98d0bc6f811f98231062f45621f4f8fba424ff5953960f957f27e791b836fd4f6817dede36875b38bc2eabbd942d9e127c117aff43c84539e8f4e529be3d432594c4028a664299a546e6\",\n    \"client_id\": \"OSXRGq3U0yNNyL7omz9b\",\n    \"client_secret\": \"ylszidb2yQ9TiDDTuLld\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/token",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Issue Token Otp Grant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"otp\",\n    \"code\": \"34321\",\n    \"username\": \"09124971706\",\n    \"client_id\": \"7tG0xc5VYOsAb41Bo4zB\",\n    \"client_secret\": \"alolG6jGiUE8SYMCirZV\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/token",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IssueTokenClientCredentials",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"client_credentials\",\n    \"client_id\": \"wg4X0Xs4avVtZrcqZ8hs\",\n    \"client_secret\": \"jLDfG4AdozkAz85xuDk4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://88.198.55.85:8094/token",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"grant_type\": \"client_credentials\",\n    \"client_id\": \"wg4X0Xs4avVtZrcqZ8hs\",\n    \"client_secret\": \"jLDfG4AdozkAz85xuDk4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_url}}/token",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Feb 2021 07:22:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Feb 2021 07:22:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 172800000,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ3ZzRYMFhzNGF2VnRacmNxWjhocyIsImp0aSI6ImI5OTM3YTY4OWVjMDEwMzEwNTM0M2JmYTEyMWQyMGQzOGVlOWJkODM3OTY1ZDAzZTVjMDY2ODk2YTU3YmE0NTZhNDY3OTk4MWY1YTY2MDZiIiwiaWF0IjoiMTYxMjU5NjE1My42Nzc3MTAiLCJuYmYiOiIxNjEyNTk2MTUzLjY3NzcxMyIsImV4cCI6IjE3ODUzOTYxNTMuNjczMDUzIiwic3ViIjoiIiwic2NvcGVzIjpbXX0.sWekiJba88EBv8e07nRh_A-fNJ0UEsBEfC9UdMZvhIkdokG2Sz4LsJe6e_krOYy9xSM4U_CeREEGyMnN331kVkgD8RAeWyeQs1cXH6xmc5qnum3KkjFQvEjQ_vB8fJzKwmUboWYoUEFBbcEUAkSKdpMDBCLTvj98_VYSD5cEs34Uzz3eERU4xI5aVZ8yO3_4XR9Esr_iRNK5Uiui7YONMRKwd6-wBa9_3tDhgKHyxiPc3A9vkQytuRDrl53fvtLNPskpqBOvxwCk9lv5RALggA20RNIpuA7ee_WBCQACUV-E-57TxG0eAvfDU1BnQbGX7u-dsF1FHtx_qelZO-5BcQ\"\n}"
+						},
+						{
+							"name": "401 - UnAuthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"grant_type\": \"client_credentials\",\n    \"client_id\": \"wg4X0Xs4avVtZrcqZ8hs\",\n    \"client_secret\": \"jLDfG4AdozkAz85xuDk45\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_url}}/token",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"token"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Feb 2021 07:25:31 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Feb 2021 07:25:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\",\n    \"code\": 401\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "news",
+			"item": [
+				{
+					"name": "http://88.198.55.85:8094/api/users/history-search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJSMmlaaDNvdVB4cXBXN3FLMVJpbSIsImp0aSI6ImVmNWNiMjQ2NjI1NDdmNTM5MDYxYjg0MDFiOTgyNzVhNDgwM2MyZmE5ZGI2MTUxZTRiYWE4YjZmYmYzYzU0NGI4MGVlNTU4NTMzYTkxOTg1IiwiaWF0IjoxNjkwNzQ1MDI0Ljc2ODcwOSwibmJmIjoxNjkwNzQ1MDI0Ljc2ODcxLCJleHAiOjE2OTEzNDk4MjQuNzU0ODY1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.PFDqa1aZKIUVD7Gnblj2XzQvpl10p1f12xdX67ocMm0L98NlTTT6dHQ1_dkIawMIY66PEmoDBspWZgkGvwO7XuPHG1QCyT1ATbhpP_xRmbKU1vk9yfX33HI5PiugNLT_wrTUHiKK8BOXtgx7nri5yKRC7sXBx0wUV-VLZDvjCCsCejGBUCYmK0wZtl_6_nVusNcv_7CauLiZAorhmj-rezuL5WwpKyABN3yeCOkuGsoixpidVizfreehgjHTUHnx24f2s4-nxPjvMoMFot137d0hbfm_mcPjOQEXqNM-2iT-bdQvNDuWmIPifCg48jGA6E6_IqrKu9SYjTkVTFYthg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/users/history-search",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"users",
+								"history-search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://88.198.55.85:8094/api/users/fetch-news?category=war ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJPU1hSR3EzVTB5Tk55TDdvbXo5YiIsImp0aSI6IjY0NTgzNTQ3ZmU4ZTllNjUyNWJjNDg0NWYwODQ1NDIzYzEyYmJkY2E0MjhmNjdjYTllZTE1MzcyM2M2YWEwOWQ0Y2NkYjg1MTkxNzRlZDRjIiwiaWF0IjoxNjkwODE3MTAwLjkxMjM2NywibmJmIjoxNjkwODE3MTAwLjkxMjM2OCwiZXhwIjoxNjkxNDIxOTAwLjkwNDQ5MSwic3ViIjoiMiIsInNjb3BlcyI6W119.WMR8rYsC0PCGocXlVBSJNkBxY8p26moBhSnkZOxegeBWVIyMPEOVGmmKDNAcsJKbdCRcxntJfHMp4dCEfbCwCaZFuVUMr5LXg3S9hE8EhE4lOBHhVzDAhdKJNnrP9lmmc66QnlSF02JukSaNvRAElMgF48xdsSF9mUOByX-Z24ADRk_xR1tIVIFAp2pfJEEh36gOhuNb5yxq4eGfAt0e-0ZNqqUPE9t9a0LWjRQhQaicYtSZs7gdrkoLm9aButezB1sa2JbpgV6fSkBt1zFB52PUWBJZ2pES5wBTOxosWfm_fMw1EX-Sdt3623-Ai43X4bf6YEz0bky5MG3w9JxVEw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/users/fetch-news?source=bbcNews&category=business&pageSize=100",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"users",
+								"fetch-news"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "bbcNews"
+								},
+								{
+									"key": "category",
+									"value": "business"
+								},
+								{
+									"key": "pageSize",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://88.198.55.85:8094/api/news?category=general&Size=1&page=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://88.198.55.85:8094/api/news?category=general&Size=1&page=1",
+							"protocol": "http",
+							"host": [
+								"88",
+								"198",
+								"55",
+								"85"
+							],
+							"port": "8094",
+							"path": [
+								"api",
+								"news"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "general"
+								},
+								{
+									"key": "Size",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server_url",
+			"value": "https://auth.arazcloud.com/api",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "mvBH8f2j28SDJ8wTTx6L",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "Kp6HoQro69TBUvHXpVJm",
+			"type": "string"
+		}
+	]
+}

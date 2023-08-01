@@ -1,0 +1,3028 @@
+openapi: 3.0.0
+info:
+  title: innoscripta
+  version: 1.0.0
+servers:
+  - url: http://88.198.55.85:8094
+  - url: http://{{server_url}}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: User
+  - name: User_Identifier
+  - name: User_Avatar
+  - name: Token
+  - name: news
+paths:
+  /users:
+    get:
+      tags:
+        - User
+      summary: List Users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJQVE41NmlLa2NwdkFmRU1VMkJqYSIsImp0aSI6ImYzZDExZmJlZWIyZGEzYzkyZmFjMmIzM2VmMjdkZGIyNGZmOGQyMDhhZjVjMzdjYmY2MGRkNGU5MDQ5YzBjNzkyOTMzMjhlZjQ3YTNhOTRjIiwiaWF0IjoiMTYwOTIzMzYwMi4wODY5ODQiLCJuYmYiOiIxNjA5MjMzNjAyLjA4Njk4NyIsImV4cCI6IjE2MDk4Mzg0MDIuMDc4NDY0Iiwic3ViIjoiMSIsInNjb3BlcyI6W119.HHsxZqfypAKMowqHg-mz_CPz4kbWxIGbt8HyYGqay5HEM77x3qUBeiUTrxK3GsL9yb5VDG6N9np9K6TaJh19vrC7Y2-87_p8FoZKk432BGEQ8nHPnTnR1RBgeUpvsZ6kIfCIdvs-Hs_vB5zKhQB3Byk3YpywWMRlArnfib13MV5ktr9d4I11t0PErpb2yot3AtnwlLmvfu7ZaWy7rUpTKVKzwU3iUYa--PICI4is-b26wcuVTTltw0jA0kffR10e7qkIWlQhQDUocFDpJ0HUUlKUGiwnAvji4IW1CtOP4p5a9T44Mow9PqTD58UxXSW1QrVrRWB9jmHCq6weOnMjWQ
+        - name: search
+          in: query
+          schema:
+            type: integer
+          description: >-
+            search in "first_name", "last_name", "user_identifiers (mobile,
+            email)"
+          example: '0912'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 14:43:48 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - first_name: Majid
+                  last_name: Abdolhosseini
+                  id: 2
+                  avatar: null
+                  is_super_admin: false
+                  status: active
+                  year_month: 1399-11
+                  year_month_day: '1399-11-05'
+                  year_week: 1399-46
+                  app_fields:
+                    app_id: 12000
+                    sid: snm786
+                  user_identifiers:
+                    - type: mobile
+                      value: '09124971706'
+                      user_id: 2
+                      is_verified: false
+                      id: 2
+                      created_at: '2021-01-24T13:31:23.000000Z'
+                      updated_at: '2021-01-24T13:31:23.000000Z'
+                  roles: []
+                - first_name: Majid
+                  last_name: Abdolhosseini
+                  id: 3
+                  avatar: null
+                  is_super_admin: false
+                  status: active
+                  year_month: 1399-11
+                  year_month_day: '1399-11-05'
+                  year_week: 1399-46
+                  app_fields:
+                    app_id: 12000
+                    sid: snm786
+                  user_identifiers:
+                    - type: mobile
+                      value: '09124971706'
+                      user_id: 3
+                      is_verified: false
+                      id: 3
+                      created_at: '2021-01-24T13:32:25.000000Z'
+                      updated_at: '2021-01-24T13:32:25.000000Z'
+                  roles: []
+                - first_name: Majid
+                  last_name: Abdolhosseini
+                  id: 4
+                  avatar: null
+                  is_super_admin: false
+                  status: active
+                  year_month: 1399-11
+                  year_month_day: '1399-11-05'
+                  year_week: 1399-46
+                  app_fields:
+                    app_id: 12000
+                    sid: snm786
+                  user_identifiers:
+                    - type: mobile
+                      value: '09124971706'
+                      user_id: 4
+                      is_verified: false
+                      id: 4
+                      created_at: '2021-01-24T13:33:22.000000Z'
+                      updated_at: '2021-01-24T13:33:22.000000Z'
+                  roles: []
+                - first_name: Majid
+                  last_name: Abdolhosseini
+                  id: 5
+                  avatar: null
+                  is_super_admin: false
+                  status: active
+                  year_month: 1399-11
+                  year_month_day: '1399-11-05'
+                  year_week: 1399-46
+                  app_fields:
+                    app_id: 12000
+                    sid: snm786
+                  user_identifiers:
+                    - type: mobile
+                      value: '09124971706'
+                      user_id: 5
+                      is_verified: false
+                      id: 5
+                      created_at: '2021-01-24T13:34:31.000000Z'
+                      updated_at: '2021-01-24T13:34:31.000000Z'
+                  roles: []
+                - first_name: Majid
+                  last_name: Abdolhosseini
+                  id: 6
+                  avatar: null
+                  is_super_admin: false
+                  status: active
+                  year_month: 1399-11
+                  year_month_day: '1399-11-05'
+                  year_week: 1399-46
+                  app_fields:
+                    app_id: 12000
+                    sid: snm786
+                  user_identifiers:
+                    - type: mobile
+                      value: '09124971706'
+                      user_id: 6
+                      is_verified: false
+                      id: 6
+                      created_at: '2021-01-24T13:34:46.000000Z'
+                      updated_at: '2021-01-24T13:34:46.000000Z'
+                  roles: []
+                - first_name: Majid
+                  last_name: Abdolhosseini
+                  id: 7
+                  avatar: null
+                  is_super_admin: false
+                  status: active
+                  year_month: 1399-11
+                  year_month_day: '1399-11-05'
+                  year_week: 1399-46
+                  app_fields:
+                    app_id: 12000
+                    sid: snm786
+                  user_identifiers:
+                    - type: mobile
+                      value: '09124971706'
+                      user_id: 7
+                      is_verified: false
+                      id: 7
+                      created_at: '2021-01-24T13:35:07.000000Z'
+                      updated_at: '2021-01-24T13:35:07.000000Z'
+                  roles: []
+                - first_name: Majid
+                  last_name: Abdolhosseini
+                  id: 9
+                  avatar: null
+                  is_super_admin: false
+                  status: active
+                  year_month: 1399-11
+                  year_month_day: '1399-11-05'
+                  year_week: 1399-46
+                  app_fields:
+                    app_id: 12000
+                    sid: snm786
+                  user_identifiers:
+                    - type: mobile
+                      value: '09124971706'
+                      user_id: 9
+                      is_verified: false
+                      id: 8
+                      created_at: '2021-01-24T13:37:08.000000Z'
+                      updated_at: '2021-01-24T13:37:08.000000Z'
+                  roles: []
+                - first_name: Majid
+                  last_name: Abdolhosseini
+                  id: 10
+                  avatar: null
+                  is_super_admin: false
+                  status: active
+                  year_month: 1399-11
+                  year_month_day: '1399-11-05'
+                  year_week: 1399-46
+                  app_fields:
+                    app_id: 12000
+                    sid: snm786
+                  user_identifiers:
+                    - type: mobile
+                      value: '09124971706'
+                      user_id: 10
+                      is_verified: false
+                      id: 9
+                      created_at: '2021-01-24T13:37:36.000000Z'
+                      updated_at: '2021-01-24T13:37:36.000000Z'
+                  roles: []
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 14:43:10 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+  /users/1:
+    get:
+      tags:
+        - User
+      summary: Show Single User
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 15:06:20 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                first_name: Super
+                last_name: Admin
+                id: 1
+                avatar: /storage/avatar/admin.jpeg
+                password: $2y$10$VgdVxrM0BalradfDnkEv3um7nDjbQJ3Lmj3.dandwA5zhp.U1kteK
+                is_super_admin: true
+                status: active
+                year_month: 1399-10
+                year_month_day: '1399-10-17'
+                year_week: 1399-43
+                app_fields:
+                  username: root
+                user_identifiers: []
+                roles: []
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 14:47:07 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+        '404':
+          description: Not Found
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 15:06:51 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Not Found
+                code: 404
+  /api/users:
+    post:
+      tags:
+        - User
+      summary: Create User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: amin
+                last_name: abedi
+                password: amedia764
+                usernames:
+                  email: amin.abedi.1368@gmail.com
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 15:41:11 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                first_name: Majid
+                last_name: Abdolhosseini
+                id: 15
+                avatar: null
+                password: $2y$10$bGs9Aks0u9w1fw3/yY6V7OxsOySZeREcKwNZ8lZOTbTppFJlpUz7O
+                is_super_admin: false
+                status: active
+                year_month: 1399-12
+                year_month_day: '1399-12-23'
+                year_week: 1399-52
+                app_fields:
+                  app_id: 12000
+                  sid: snm786
+                user_identifiers:
+                  - type: mobile
+                    value: '09124971706'
+                    user_id: 15
+                    is_verified: false
+                    id: 14
+                    created_at: '2021-03-13T15:41:10.000000Z'
+                    updated_at: '2021-03-13T15:41:10.000000Z'
+                roles: []
+        '422':
+          description: Unprocessable Entity
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 15:49:48 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                errors:
+                  usernames.email:
+                    - usernames.email already exists.
+  /api/users/3:
+    delete:
+      tags:
+        - User
+      summary: Delete User
+      security:
+        - bearerAuth: []
+      responses:
+        '204':
+          description: No Content
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 10:29:17 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+        '400':
+          description: Bad Request
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 16:19:28 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: You can't delete logged in user
+                code: 400
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 15:50:31 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+    put:
+      tags:
+        - User
+      summary: Update User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: Majid22
+                last_name: Abdolhosseini122
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{access_token}}
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 16:23:14 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                first_name: Majid22
+                last_name: Abdolhosseini122
+                id: 3
+                avatar: null
+                password: $2y$10$uz/BNvqbpuKVFwqUlIdjD.OxkqzsvHPB34iKIRjy7YayA3QTUN59y
+                is_super_admin: false
+                status: active
+                year_month: 1399-11
+                year_month_day: '1399-11-05'
+                year_week: 1399-46
+                app_fields:
+                  app_id: 12000
+                  sid: snm786
+                user_identifiers: []
+                roles: []
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 16:21:15 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '56'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+        '404':
+          description: Not Found
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 16:22:37 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Not Found
+                code: 404
+  /api/users/change-password:
+    put:
+      tags:
+        - User
+      summary: Change My Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                old_password: '12345678'
+                new_password: '123456'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 16:24:07 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 200
+                message: success
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 16:24:30 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+  /api/users/forget-password:
+    post:
+      tags:
+        - User
+      summary: Forget Password (change password)
+      description: |-
+        You should get code using this API endpoint :
+        {{server_url}}/user_identifiers/send_verification_code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                code: '93103'
+                new_password: '12345678'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 17:05:10 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 200
+                message: success
+        '404':
+          description: Not Found
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 13 Mar 2021 16:59:33 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: otp code expired or not exists
+                message_code: invalid_otp_code
+                code: 404
+  /user_identifiers:
+    post:
+      tags:
+        - User_Identifier
+      summary: Add Identifier (By Logged in user for himself)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                type: email
+                value: majid8911303@gmail.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Tue, 24 Nov 2020 07:16:23 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/7.4.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '50'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                type: mobile
+                value: '09395410440'
+                user_id: 102
+                is_verified: false
+                id: 1006
+                created_at: '2020-11-24T06:47:50.000000Z'
+                updated_at: '2020-11-24T06:47:50.000000Z'
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 07:17:43 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+    get:
+      tags:
+        - User_Identifier
+      summary: List All User Identifiers
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 10:51:19 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - type: email
+                  value: root@gmail.com
+                  user_id: 1
+                  is_verified: true
+                  id: 1
+                  created_at: '2021-01-06T11:08:22.000000Z'
+                  updated_at: '2021-01-06T11:08:22.000000Z'
+                - type: mobile
+                  value: '09124971706'
+                  user_id: 2
+                  is_verified: true
+                  id: 2
+                  created_at: '2021-01-24T13:31:23.000000Z'
+                  updated_at: '2021-03-14T10:31:39.000000Z'
+                - type: mobile
+                  value: '09124971706'
+                  user_id: 4
+                  is_verified: false
+                  id: 4
+                  created_at: '2021-01-24T13:33:22.000000Z'
+                  updated_at: '2021-01-24T13:33:22.000000Z'
+                - type: mobile
+                  value: '09124971706'
+                  user_id: 5
+                  is_verified: false
+                  id: 5
+                  created_at: '2021-01-24T13:34:31.000000Z'
+                  updated_at: '2021-01-24T13:34:31.000000Z'
+                - type: mobile
+                  value: '09124971706'
+                  user_id: 6
+                  is_verified: false
+                  id: 6
+                  created_at: '2021-01-24T13:34:46.000000Z'
+                  updated_at: '2021-01-24T13:34:46.000000Z'
+                - type: mobile
+                  value: '09124971706'
+                  user_id: 7
+                  is_verified: false
+                  id: 7
+                  created_at: '2021-01-24T13:35:07.000000Z'
+                  updated_at: '2021-01-24T13:35:07.000000Z'
+                - type: mobile
+                  value: '09124971706'
+                  user_id: 9
+                  is_verified: false
+                  id: 8
+                  created_at: '2021-01-24T13:37:08.000000Z'
+                  updated_at: '2021-01-24T13:37:08.000000Z'
+                - type: mobile
+                  value: '09124971706'
+                  user_id: 10
+                  is_verified: false
+                  id: 9
+                  created_at: '2021-01-24T13:37:36.000000Z'
+                  updated_at: '2021-01-24T13:37:36.000000Z'
+                - type: mobile
+                  value: '09395410440'
+                  user_id: 11
+                  is_verified: false
+                  id: 10
+                  created_at: '2021-02-06T07:44:38.000000Z'
+                  updated_at: '2021-02-06T07:44:38.000000Z'
+                - type: mobile
+                  value: '09395410440'
+                  user_id: 12
+                  is_verified: false
+                  id: 11
+                  created_at: '2021-02-06T07:51:38.000000Z'
+                  updated_at: '2021-02-06T07:51:38.000000Z'
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 10:33:48 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+  /user_identifiers/by_admin:
+    post:
+      tags:
+        - User_Identifier
+      summary: Add Identifier (For another user by admin)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                user_id: 1
+                type: email
+                value: majid89113034@gmail.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 09:38:16 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '57'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                type: email
+                value: majid89113034@gmail.com
+                user_id: 1
+                is_verified: true
+                id: 16
+                created_at: '2021-03-14T09:38:16.000000Z'
+                updated_at: '2021-03-14T09:38:16.000000Z'
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 08:58:41 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+        '422':
+          description: Unprocessable Entity
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 09:37:44 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                errors:
+                  value:
+                    - value already exists.
+  /user_identifiers/10000:
+    delete:
+      tags:
+        - User_Identifier
+      summary: Remove Identifier
+      security:
+        - bearerAuth: []
+      responses:
+        '204':
+          description: No Content
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 10:01:27 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '57'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 09:49:54 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+  /api/user_identifiers/verify:
+    post:
+      tags:
+        - User_Identifier
+      summary: Verify Identifier
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                type: email
+                value: amin.abedi.1368@gmail.com
+                code: '44862'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 10:31:40 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                token_type: Bearer
+                expires_in: 604800
+                access_token: >-
+                  eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ3ZzRYMFhzNGF2VnRacmNxWjhocyIsImp0aSI6IjM5ODI2YzhhNTVmMDZmZDVkM2I2OWM5NGM1NWRmMjNjZTY3MmU2ZDIxMTdjYTI2ZTg3NmQ4OWRhNGMzNjFmZjhiYThkY2QxMTJiMDE4ZjM3IiwiaWF0IjoiMTYxNTcxNzg5OS44MzEzODYiLCJuYmYiOiIxNjE1NzE3ODk5LjgzMTM5MCIsImV4cCI6IjE2MTYzMjI2OTkuODE4NTM3Iiwic3ViIjoiMiIsInNjb3BlcyI6W119.Tc06M3bWsTFHIID5X7PrmiRrAXchXZDBSiAeOqJlUX17GjCLRmgu2l3l8ikn4NvFJzNuD7qxq8Lw2qnq9A5Brm6Vnppsq_CBP25tBY-quSzuiTAy-RDbbInsikLeODoLCHi4eHM_CeheVdFRVpVtFWw2XAvSb5jXmVMdxZphXrLiG6Kv00D0CoSjEvGAeHSXbdIFF0Qbhla8vGx2peoMdGwGROBeQhYxEzK9vw6pkg5Anpmnx9YjLCMfc-tlzK7-FsO0apspV6rIEzL6vggw6VcQ31RZ5CIkg07eERh6JTBw2Dp04NOoLohf6cVYa90yoFx_6Mj6zqarEKlqmUuG_g
+                refresh_token: >-
+                  def50200e5399f8c4f3bc30f9dcd37f2e92ca5145bbaa8551389cb668365af80a1d1958475f33e393b5b1abce2af214a332d2603e1d9a7fa963347986e82c9f74d6bddbb0994ddc383e0185f1c9dcbd445dc02337181bc10a00e8d1af5f9e1cafb61f6f00024d40c8d28e83ff581296516658ec8ad787c7bc87ca297db826190e8027679d28f15e512aad50525ff03983f8cbe47e4595bf02c6deac0c701738db053cfeca88f8ed6db8c649d1c79849b3c5f7f7adf8d472b7afb8c397be928ecd7171a5398b04b2f813d8e259234cf84e015cef31550fa692d75470c21b186bfd8add5d0b885f5859bbe68464f6ead76ea46941024c7236271573765523b11e3569fab3d771a22ac4cb9dbb134c2b6fd05502ed6cff83743c50375a0eecec339bd781d36ab16ab6923271b801f7816e525caddc5328c200afa2bcf96b4ae12367c8460e010d95cdf67ec49cab47f431daed026c434b628a4b17b365cbd6189fc52a155fbe51b14438c1f447eabd7589572bb9bf9
+        '422':
+          description: Unprocessable Entity
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 10:11:01 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: 422 - validation error (invalid verification code)
+                  value:
+                    message: Invalid Verification Code
+                    code: 422
+                example-1:
+                  summary: 422 - Validation Error
+                  value:
+                    errors:
+                      type:
+                        - The type field is required.
+                      value:
+                        - The value field is required.
+                      code:
+                        - The code field is required.
+                example-2:
+                  summary: 422 - Already Verified
+                  value:
+                    message: Already Verified
+                    code: 422
+  /user_identifiers/13:
+    get:
+      tags:
+        - User_Identifier
+      summary: Show Single Identifier
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 11:11:57 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                type: mobile
+                value: '09124971706'
+                user_id: 14
+                is_verified: false
+                id: 13
+                created_at: '2021-03-13T15:22:08.000000Z'
+                updated_at: '2021-03-13T15:22:08.000000Z'
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 11:10:35 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+        '404':
+          description: Not Found
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 11:11:05 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '57'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Not Found
+                code: 404
+  /user_identifiers/send_verification_code:
+    post:
+      tags:
+        - User_Identifier
+      summary: Send Verification code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: '09124971706'
+      responses:
+        '204':
+          description: No Content
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 10:15:08 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '55'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /user_identifiers/mine:
+    get:
+      tags:
+        - User_Identifier
+      summary: List My User Identifiers
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 11:01:22 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - type: email
+                  value: root@gmail.com
+                  user_id: 1
+                  is_verified: true
+                  id: 1
+                  created_at: '2021-01-06T11:08:22.000000Z'
+                  updated_at: '2021-01-06T11:08:22.000000Z'
+                - type: email
+                  value: majid8911303@gmail.com
+                  user_id: 1
+                  is_verified: true
+                  id: 15
+                  created_at: '2021-03-14T07:33:26.000000Z'
+                  updated_at: '2021-03-14T09:37:38.000000Z'
+                - type: email
+                  value: majid89113034@gmail.com
+                  user_id: 1
+                  is_verified: true
+                  id: 16
+                  created_at: '2021-03-14T09:38:16.000000Z'
+                  updated_at: '2021-03-14T09:38:16.000000Z'
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 10:55:01 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+  /users/1/avatar:
+    post:
+      tags:
+        - User_Avatar
+      summary: Upload Avatar Image By Admin For Others
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                avatar:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{access_token}}
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 12:09:55 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                first_name: Super
+                last_name: Admin
+                id: 1
+                avatar: /storage/avatar/XpLS2kti1BnLbAldXHOnRCaSEHhtcTFkykfiWiuU.png
+                password: $2y$10$bjLSUzB3WzN1ExkL9UpIHOhDIh7kh3.SuvZv9ecp17ThFeBBg5.Fy
+                is_super_admin: true
+                status: active
+                year_month: 1399-10
+                year_month_day: '1399-10-17'
+                year_week: 1399-43
+                app_fields:
+                  username: root
+                user_identifiers: []
+                roles: []
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 12:08:46 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+    delete:
+      tags:
+        - User_Avatar
+      summary: Delete Avatar
+      security:
+        - bearerAuth: []
+      responses:
+        '204':
+          description: No Content
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 12:38:24 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '57'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 12:37:43 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+  /api/users/avatar:
+    post:
+      tags:
+        - User_Avatar
+      summary: Upload Avatar Image By User for himself
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                avatar:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{access_token}}
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 12:09:55 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                first_name: Super
+                last_name: Admin
+                id: 1
+                avatar: /storage/avatar/XpLS2kti1BnLbAldXHOnRCaSEHhtcTFkykfiWiuU.png
+                password: $2y$10$bjLSUzB3WzN1ExkL9UpIHOhDIh7kh3.SuvZv9ecp17ThFeBBg5.Fy
+                is_super_admin: true
+                status: active
+                year_month: 1399-10
+                year_month_day: '1399-10-17'
+                year_week: 1399-43
+                app_fields:
+                  username: root
+                user_identifiers: []
+                roles: []
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Mar 2021 12:08:46 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.2
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+  /api/token/revoke_token:
+    delete:
+      tags:
+        - Token
+      summary: Revoke MY Token (Login)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            tk3KneReAfgw4iKtZxT5RKV4HkrvxtMF0KzGxnOXHV2TwlPNcOjKLlZUtl23UIx8FtLK4eRIqSAdgIMNraSV9BcTAX7L_23yjEwvklU2TOLVUFPXs7CG5JkVyA
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/token:
+    post:
+      tags:
+        - Token
+      summary: Issue Token Password Grant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: aminabedi.1368@gmail.com
+                password: amedia764
+                grant_type: password
+                client_id: OSXRGq3U0yNNyL7omz9b
+                client_secret: ylszidb2yQ9TiDDTuLld
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 22 Nov 2020 08:34:40 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/7.4.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                token_type: Bearer
+                expires_in: 604800
+                access_token: >-
+                  eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJwZHRkNWxHUXM2a0VIU2REUWIzQiIsImp0aSI6IjM2MWNiNmVjYThhY2QwOWM1MWY4Y2IwY2ZmOWRhOTA0NDJhOGJhM2M1MGE0M2Y3ZWEzNDE5NTNiMGEyYmQ0OTc3YzlmNzA4NTQ4ZjVmNDE4IiwiaWF0IjoxNjA2MDM0MDgwLCJuYmYiOjE2MDYwMzQwODAsImV4cCI6MTYwNjYzODg4MCwic3ViIjoiIiwic2NvcGVzIjpbXX0.XHybkmD2LppjHahKT7Z7G_6mG1QWaU8W5c_W_tvyvWAS30_aWUHYGVQEXhHxnuJSUQ-zESOOuWULw_s3wViEqCRgS2m2ybb8UQUhUxN64kFGqnZYz85HBdHT11FsjymaDR6_kJujvdKcgzztCLCjylsDU1xFTei3M7ifpauqWQ6lofGWz1AcCWBn5dS3kCi-wYWFI2BDal9a_PoKlgo4_oar7N10ZDqdDmdHuzqv932E5Rm1hhjbphwQXfZr0gTZnelboA2c04UvfMAwCHd458NRMTr7IW5GaARbThMaM-g-KDAVTtDNronzLXrwV3NsR1Upceahg3j4BGSWiz2EiA
+                refresh_token: >-
+                  def50200862619458cf1974e429a3b4782cc1b19d8b4ea0f291332b1b67431b8574a00fbb83b1346ad2f7d3a56059bdfbb1817ef7eca72439f64dc3382d753ba23b6d4f034f8d2ae78c32499c3b9923934eeae4f598d80ed9f876e80dc201ececc7a2e0fcee6757e328d39e497aaba6f10a2eb16e72d3dc42ec10ee6021fedf2e18b874ed25f169b35a07c9cc7ac43f77038afd012e8d6414c13c3893117330cb7240f7765cbbf4bfbe7abc80ae072228a36bf7eb486ee07aea3cfbb8ac6cba0b450465b53865830defb9c060da6b84fb5babf13f22cdd83765b49ce2a2bac915e3048e8b896d0bf7d93c80af49351aca03952122efc3ba3e554d19c87be7334b7aa24183bd5cf653e88bc803af30807342cbb203aaf9079b82042f8675c6cb0cc8406df811e1c300cfc26a4141ca4eba0348e1b0126d876f70bcc5f222a7142583c2b2862788bdc17fa44df109496d1e0295a68ea564797da603eb678946b3561eb147e30d01b29b96896620fbb060835f1c15fa0ca30
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 22 Nov 2020 08:35:49 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/7.4.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+  /api/token/token_info/eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJPU1hSR3EzVTB5Tk55TDdvbXo5YiIsImp0aSI6IjNhNTNhODBlMDRiOGVmODg2NjJkZjQwYmI4YjFkNjU4MTI3OWUwODk2YzFjYWQyNWFhYjY4ZmJiYmU1NmE2YzM3Yzc0YzM5OWYwNjE3ZGY5IiwiaWF0IjoxNjkwNzY5MDIwLjgxODU0NiwibmJmIjoxNjkwNzY5MDIwLjgxODU0OCwiZXhwIjoxNjkxMzczODIwLjgwNjEzLCJzdWIiOiIxMCIsInNjb3BlcyI6W119.O-n3hiWrHW5d6vq8_betuKZUq3X92MNgJJB0lCXYEbSnuTMnyeUTFgcyU8_KuiBqSwOOFnFE1HJF5BlOP6U0ivoxtnGzk0nhpVX8l8SZkC0Ol9X64VuxSFTvdWHSedqnNT5kdA3px_2f75W4DfPvNtL2kR_VpoTyzfS2nBh5KoJCCsICTH8HqE3h2uxdemdNEFSur2iJ0-zZx5Q-NAOqy9YU3wMeCbnr04_GxVDPZFNS-pycn13lfm9mDmIGezl8ar8WqFBh4l34GlBiv_mm6RMOqH3J4hmcByLx8dFUDRRv96a7R4iVVcJ2QZFEdESiDXYCthyaKiP8IjNbg7U5ow:
+    get:
+      tags:
+        - Token
+      summary: Get Token Info
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 22 Nov 2020 08:33:17 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/7.4.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '57'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                user_entity:
+                  first_name: Majid
+                  last_name: Abdolhosseini
+                  id: 105
+                  username: mhndev4
+                  user_identifier:
+                    - type: mobile
+                      value: '09124971706'
+                      user_id: 105
+                      id: 1007
+                      created_at: '2020-11-18T09:23:59.000000Z'
+                      updated_at: '2020-11-18T09:23:59.000000Z'
+                  roles:
+                    - name: Destany Mante DDS
+                      slug: destany-mante-dds
+                      description: >-
+                        Quia eveniet consequatur non quae nisi est. Dolor beatae
+                        rerum sunt assumenda. Sequi sit nulla est dolorem.
+                      id: 1
+                      scopes:
+                        - name: Larissa McLaughlin
+                          slug: larissa-mclaughlin
+                          description: >-
+                            Officiis error dolorem repudiandae. Quisquam
+                            voluptas iusto eaque fugit dolores deleniti minima.
+                            Ducimus voluptas cum est non beatae quo qui.
+                          id: 30
+                        - name: Antonio Mante
+                          slug: antonio-mante
+                          description: >-
+                            Ut sed distinctio ea et. Dolor harum iste cupiditate
+                            molestias totam recusandae sint non. Sequi eligendi
+                            nulla est praesentium. Veritatis natus odio
+                            excepturi eveniet animi.
+                          id: 128
+                        - name: Logan Jacobson
+                          slug: logan-jacobson
+                          description: >-
+                            Dicta ut similique ratione natus aut voluptatum
+                            velit. Voluptatem amet aut natus eligendi. Illum
+                            iusto fugiat soluta esse quisquam mollitia quod
+                            cupiditate.
+                          id: 179
+                    - name: Emilie Hirthe Jr.
+                      slug: emilie-hirthe-jr
+                      description: >-
+                        Et aspernatur ut quidem nihil. Aut eaque maxime
+                        assumenda iure omnis. Eveniet reprehenderit facere
+                        voluptatem dolorem sit sit non. Iste inventore dolores
+                        sint.
+                      id: 2
+                      scopes:
+                        - name: Elena Simonis
+                          slug: elena-simonis
+                          description: >-
+                            Tenetur repellendus veritatis deserunt voluptates.
+                            Saepe ut omnis sed et beatae. Qui officiis et illo.
+                          id: 2
+                        - name: Earnestine Macejkovic
+                          slug: earnestine-macejkovic
+                          description: >-
+                            Dolor iusto ea voluptates rem. Voluptatem at
+                            cupiditate quae sapiente dolorem et voluptatem
+                            officia. Reprehenderit laudantium sapiente numquam
+                            aut sunt.
+                          id: 26
+                        - name: Augustus Sauer
+                          slug: augustus-sauer
+                          description: >-
+                            Aliquid aut cum magnam ut quod magni. Dolore totam
+                            saepe ut corrupti numquam reiciendis non. In
+                            officiis inventore inventore et.
+                          id: 42
+                        - name: Bernice Gorczany
+                          slug: bernice-gorczany
+                          description: >-
+                            Nostrum perferendis perspiciatis inventore est
+                            maiores omnis non aliquam. Qui quia amet ut officia
+                            magnam dicta.
+                          id: 46
+                        - name: Gerardo Ledner
+                          slug: gerardo-ledner
+                          description: >-
+                            Non molestiae repellat dicta eum culpa. Non ea
+                            nostrum vel optio aut. At illo ipsum accusamus.
+                            Expedita facere deleniti aut iusto voluptas nam et.
+                            Rerum tempore doloribus quod cupiditate.
+                          id: 135
+                        - name: John Walker
+                          slug: john-walker
+                          description: >-
+                            Reprehenderit ut est ducimus adipisci velit sed.
+                            Blanditiis excepturi consequuntur voluptatibus optio
+                            fugit dolore quam aut. Nihil quia aut hic autem
+                            placeat quis voluptas.
+                          id: 140
+                        - name: Rico Gulgowski II
+                          slug: rico-gulgowski-ii
+                          description: >-
+                            Quia cumque quis ut est aut voluptas impedit. Nisi
+                            consequuntur necessitatibus necessitatibus ut rerum.
+                            Doloribus ut quis sunt. Doloremque sint voluptatem
+                            maxime atque.
+                          id: 180
+                        - name: Prof. Leon Kunze
+                          slug: prof-leon-kunze
+                          description: >-
+                            Officiis consectetur reiciendis cum incidunt quas.
+                            Qui fugit excepturi enim est quo qui.
+                          id: 182
+                oauth_access_token_id: >-
+                  b7ec0bf6723882f291723960213925909d2fd739407fa13f77d9177ad5f5cd557f15bb7c2d2a2729
+                oauth_client_id: pdtd5lGQs6kEHSdDQb3B
+        '404':
+          description: Not Found
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 22 Nov 2020 08:30:51 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/7.4.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                code: 404
+                message: access token not found
+  /api/token/revoke_token/{access_token}:
+    delete:
+      tags:
+        - Token
+      summary: Revoke User Token (Admin calls this API)
+      parameters:
+        - name: access_token
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sun, 22 Nov 2020 08:53:56 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/7.4.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Token
+                code: 401
+  /token:
+    post:
+      tags:
+        - Token
+      summary: IssueTokenClientCredentials
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                grant_type: client_credentials
+                client_id: wg4X0Xs4avVtZrcqZ8hs
+                client_secret: jLDfG4AdozkAz85xuDk4
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 06 Feb 2021 07:22:33 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.1
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                token_type: Bearer
+                expires_in: 172800000
+                access_token: >-
+                  eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ3ZzRYMFhzNGF2VnRacmNxWjhocyIsImp0aSI6ImI5OTM3YTY4OWVjMDEwMzEwNTM0M2JmYTEyMWQyMGQzOGVlOWJkODM3OTY1ZDAzZTVjMDY2ODk2YTU3YmE0NTZhNDY3OTk4MWY1YTY2MDZiIiwiaWF0IjoiMTYxMjU5NjE1My42Nzc3MTAiLCJuYmYiOiIxNjEyNTk2MTUzLjY3NzcxMyIsImV4cCI6IjE3ODUzOTYxNTMuNjczMDUzIiwic3ViIjoiIiwic2NvcGVzIjpbXX0.sWekiJba88EBv8e07nRh_A-fNJ0UEsBEfC9UdMZvhIkdokG2Sz4LsJe6e_krOYy9xSM4U_CeREEGyMnN331kVkgD8RAeWyeQs1cXH6xmc5qnum3KkjFQvEjQ_vB8fJzKwmUboWYoUEFBbcEUAkSKdpMDBCLTvj98_VYSD5cEs34Uzz3eERU4xI5aVZ8yO3_4XR9Esr_iRNK5Uiui7YONMRKwd6-wBa9_3tDhgKHyxiPc3A9vkQytuRDrl53fvtLNPskpqBOvxwCk9lv5RALggA20RNIpuA7ee_WBCQACUV-E-57TxG0eAvfDU1BnQbGX7u-dsF1FHtx_qelZO-5BcQ
+        '401':
+          description: Unauthorized
+          headers:
+            Host:
+              schema:
+                type: string
+                example: localhost:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 06 Feb 2021 07:25:31 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: number
+                example: PHP/8.0.1
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid Credentials
+                code: 401
+  /api/users/history-search:
+    get:
+      tags:
+        - news
+      summary: http://88.198.55.85:8094/api/users/history-search
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/users/fetch-news:
+    get:
+      tags:
+        - news
+      summary: 'http://88.198.55.85:8094/api/users/fetch-news?category=war '
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: source
+          in: query
+          schema:
+            type: string
+          example: bbcNews
+        - name: category
+          in: query
+          schema:
+            type: string
+          example: business
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+          example: '100'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/news:
+    get:
+      tags:
+        - news
+      summary: http://88.198.55.85:8094/api/news?category=general&Size=1&page=1
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+          example: general
+        - name: Size
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
